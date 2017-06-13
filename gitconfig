@@ -1,0 +1,35 @@
+[user]
+    name = Peter Hicks
+    email = jph@bebo.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[color "diff"]
+    whitespace = red reverse
+[core]
+    pager = less -FRSX
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+[alias]
+    A = add -A
+    g = grep --break --heading --line-number
+    l = pull
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lr = pull --rebase
+    p = push
+    s = status
+    riom = rebase -i origin/master
+    undo = reset --soft "HEAD^"
+    wdiff = diff --color-words
+[mergetool "fugitive"]
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[push]
+    default = tracking
+[grep]
+    lineNumber = true
+[merge]
+    tool = fugitive
