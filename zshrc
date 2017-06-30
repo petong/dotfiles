@@ -106,6 +106,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # alias
 alias g='git'
+alias h=history
 
 case $OSTYPE {
     linux*)
