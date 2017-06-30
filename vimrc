@@ -60,3 +60,16 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+if isdirectory($HOME . '/.vim/backup') == 0
+  :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
+endif
+set backupdir=~/.vim/backup//
+set backup
+
+if isdirectory($HOME . '/.vim/swap') == 0
+  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+endif
+set directory=~/.vim/swap//
+set undofile
+set undodir=~/.vim/undo//
+
