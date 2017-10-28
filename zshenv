@@ -18,7 +18,7 @@ fi
 export EDITOR
 
 # disable flow control so we can use ctrl-s
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 
 ssh-reagent () {
   for agent in /tmp/ssh-*/agent.*; do
