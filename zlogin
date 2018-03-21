@@ -14,7 +14,7 @@ fi
 
 if [[ -x $(which keychain) ]];then
 #    eval $(keychain --lockwait 60 --eval id_rsa jah_id_ecdsa jph_bebo_id_ecdsa)
-eval $(keychain -q --lockwait 60 --eval id_rsa jph_bebo_id_ecdsa jah_id_ecdsa)
+eval $(keychain -q --lockwait 60 --eval id_rsa jah_id_ecdsa augur_id_rsa)
 fi
 
 export SSH_AUTH_SOCK
@@ -30,4 +30,5 @@ function cleanup {
 
 #trap cleanup EXIT
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# rvm
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
