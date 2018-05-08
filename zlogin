@@ -14,7 +14,7 @@ fi
 
 if [[ -x $(which keychain) ]];then
 #    eval $(keychain --lockwait 60 --eval id_rsa jah_id_ecdsa jph_bebo_id_ecdsa)
-eval $(keychain -q --lockwait 60 --eval id_rsa jah_id_ecdsa augur_id_rsa)
+eval $(keychain -q --lockwait 60 --eval id_rsa jah_id_ecdsa augur_id_rsa jph_digitalocean)
 fi
 
 export SSH_AUTH_SOCK
