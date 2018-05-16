@@ -2,46 +2,18 @@
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
   source ~/.zplug/init.zsh && zplug update --self
+else
+  source ~/.zplug/init.zsh
 fi
 
 # Essential
-source ~/.zplug/init.zsh
+# source ~/.zplug/init.zsh
 
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async, from:github"
 zplug "sindresorhus/pure, use:pure.zsh, from:github, as:theme"
 zplug "zsh-users/zsh-completions"
-
-# Add a bunch more of your favorite packages!
-
-# Install packages that have not been installed yet
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
-
-zplug load
-
-# Set up the prompt
-
-# Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update --self
-fi
-
-# Essential
-source ~/.zplug/init.zsh
-
-# Make sure to use double quotes to prevent shell expansion
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "mafredri/zsh-async, from:github"
-zplug "sindresorhus/pure, use:pure.zsh, from:github, as:theme"
 
 # Add a bunch more of your favorite packages!
 
@@ -127,5 +99,16 @@ case $OSTYPE {
         export LSCOLORS="gxfxcxdxbxegedabagacad"
     ;;
 }
+
+
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+#[[ -f /Users/jph/git/augur-app/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/jph/git/augur-app/node_modules/tabtab/.completions/electron-forge.zsh
+
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
