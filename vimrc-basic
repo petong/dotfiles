@@ -1,3 +1,4 @@
+" https://raw.githubusercontent.com/petong/dotfiles/master/vimrc-basic
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -7,3 +8,16 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 call plug#end()
+
+" other sensible settings
+set hidden       "allow hidden buffers
+set nu           "show numbers
+set wrap         "wrap lines
+set linebreak    "Wrap lines at convenient points
+
+" movement within a single line in linewrap
+nnoremap j gj
+nnoremap k gk
+
+" new default for mouse set in upstream is LAME
+set mouse=
