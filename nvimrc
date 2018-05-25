@@ -26,6 +26,9 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 "Plug 'junegunn/rainbow_parentheses.vim'
 
+" gist
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
@@ -33,21 +36,17 @@ Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-"Plug 'roxma/nvim-completion-manager'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "
 "Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 
 " syntax
 Plug 'saltstack/salt-vim'
-"Plug 'https://github.com/chr4/nginx.vim'
 Plug 'chr4/nginx.vim'
 "Plug 'https://github.com/xolox/vim-misc.git'
-"Plug 'xolox/vim-lua-ftplugin.git'
 
 
 " themes
@@ -151,12 +150,6 @@ let g:python3_host_prog = '/Users/jph/.pyenv/shims/python3'
 " change arrow key mapping.
 " left and right change buffers
 " up and down will move lines
-"nnoremap <Down> :m+<CR>==
-"nnoremap <Up> :m-2<CR>==
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 inoremap <up> <nop>
