@@ -1,6 +1,6 @@
 [user]
-    name = Peter Hicks
-    email = jph@bebo.com
+	name = Peter Hicks
+	email = jph@jah.net
 [color]
     diff = auto
     status = auto
@@ -33,3 +33,5 @@
     lineNumber = true
 [merge]
     tool = fugitive
+[github]
+	user = petong
