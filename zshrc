@@ -82,6 +82,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias g='git'
 alias h=history
 
+alias yaml2js="python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
+
 case $OSTYPE {
     linux*)
         if [[ -f ~/.dircolors ]]; then

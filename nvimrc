@@ -12,41 +12,42 @@ call plug#begin('~/.config/nvim/plugged')
 "  UpdateRemotePlugi
 "endfunction
 
-Plug 'tpope/vim-fugitive'
-Plug 'https://github.com/gregsexton/gitv.git'
-Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'gregsexton/gitv'
+Plug 'w0rp/ale'
+Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }
+Plug 'int3/vim-extradite'
 Plug 'junegunn/vim-easy-align'
 Plug 'mtth/scratch.vim'
-Plug 'int3/vim-extradite'
-"Plug 'scrooloose/syntastic'
-Plug 'https://github.com/w0rp/ale.git'
 Plug 'rking/ag.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 "Plug 'junegunn/rainbow_parentheses.vim'
-
-" gist
-Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'Shougo/neosnippet.vim'
+"Plug 'Shougo/neosnippet-snippets'
 
+"Plug 'roxma/nvim-completion-manager'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "
 "Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " syntax
 Plug 'saltstack/salt-vim'
+"Plug 'https://github.com/chr4/nginx.vim'
 Plug 'chr4/nginx.vim'
 "Plug 'https://github.com/xolox/vim-misc.git'
+"Plug 'xolox/vim-lua-ftplugin.git'
 
 
 " themes
@@ -75,7 +76,7 @@ set nostartofline              " Try to preserve column where cursor is position
 set ls=2                       " show a status line even when only one window is shown
 set shm=at                     " short message
 set ww=<,>,h,l                 " Allow specified keys that move the cursor left/right to move to the previous/next line when the cursor is on the first/last character in the line
-set cpoptions=ces$             " show $ at end of word when you use cw
+"set cpoptions=ces$             " show $ at end of word when you use cw
 set nopaste                    " default to no paste mode
 set nodigraph                  " Disable the entering of digraphs in Insert mode with {char1} <BS>
 set ignorecase                 " make searches case insensitive
@@ -150,6 +151,12 @@ let g:python3_host_prog = '/Users/jph/.pyenv/shims/python3'
 " change arrow key mapping.
 " left and right change buffers
 " up and down will move lines
+"nnoremap <Down> :m+<CR>==
+"nnoremap <Up> :m-2<CR>==
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
 inoremap <up> <nop>
@@ -257,3 +264,5 @@ endif
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
