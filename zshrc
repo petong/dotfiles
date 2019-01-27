@@ -14,6 +14,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async, from:github"
 zplug "sindresorhus/pure, use:pure.zsh, from:github, as:theme"
 zplug "zsh-users/zsh-completions"
+zplug "plugins/gitfast", from:oh-my-zsh
 
 # Add a bunch more of your favorite packages!
 
@@ -75,7 +76,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
 
 
 # alias
