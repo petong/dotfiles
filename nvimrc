@@ -14,7 +14,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+"Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregsexton/gitv'
 Plug 'w0rp/ale'
@@ -53,6 +54,7 @@ Plug 'chr4/nginx.vim'
 " themes
 Plug 'https://github.com/tomasr/molokai.git'
 Plug 'fenetikm/falcon'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 "
@@ -172,8 +174,8 @@ tnoremap <Esc> <C-\><C-n>
 set mouse=
 
 " ================= Colors ========================
-colorscheme molokai
 set background=dark
+colorscheme PaperColor
 "
 
 "improve autocomplete menu color
@@ -223,6 +225,7 @@ endif
 " ==================== AirLine ====================
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
+let g:airline_theme='papercolor'
 
 " ==================== fugitive ====================
 set diffopt+=vertical
