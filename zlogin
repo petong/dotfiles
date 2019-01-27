@@ -8,7 +8,7 @@ if [[ -f ~/.keychain/$(hostname)-sh ]]; then
 fi
 
 if [[ -x $(which keychain) ]];then
-    eval $(keychain -q --lockwait 60 --agents gpg,ssh --eval jph_digitalocean id_ed25519 F2D12948 )
+    eval $(keychain -q --lockwait 60 --agents ssh --eval jph_digitalocean id_ed25519 )
 fi
 
 #export SSH_AUTH_SOCK
