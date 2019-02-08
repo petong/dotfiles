@@ -25,6 +25,8 @@
     riom = rebase -i origin/master
     undo = reset --soft "HEAD^"
     wdiff = diff --color-words
+    recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+    rb = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 [mergetool "fugitive"]
     cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
