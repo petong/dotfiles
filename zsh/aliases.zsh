@@ -1,20 +1,10 @@
-# editor
-if (( $+commands[nvim] )); then
-  export EDITOR=nvim
-  export VISUAL=nvim
-  alias vi=$EDITOR
-  alias vim=$EDITOR
-elif (( $+commands[vim] )); then
-  export EDITOR=vim
-  export VISUAL=vim
-  alias vi=$EDITOR
-  alias vim=$EDITOR
-fi
 
 # aliases
 alias g='git'
 alias h=history
 alias yaml2js="python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
+alias vi=$EDITOR
+alias vim=$EDITOR
 
 # OS specific aliases
 case $OSTYPE {
