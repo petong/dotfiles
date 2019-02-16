@@ -1,0 +1,2 @@
+setopt histignorealldups
+setopt sharehistory
