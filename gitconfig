@@ -6,12 +6,17 @@
     status = auto
     branch = auto
     interactive = auto
-    ui = true
+	ui = true
     pager = true
 [color "diff"]
-    whitespace = red reverse
+	whitespace = red reverse
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
 [core]
-    pager = less -FrS
+	pager = diff-so-fancy | less --tabs=4 -RFX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
 [alias]
@@ -39,3 +44,8 @@
     tool = fugitive
 [github]
 	user = petong
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

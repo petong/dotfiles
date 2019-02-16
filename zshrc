@@ -38,7 +38,11 @@ zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
 # Load the pure theme, with zsh-async library that's bundled with it
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
-# needs to be run last
+# diff-so-fancy
+zplugin ice as"program" pick"bin/git-dsf" wait"0" lucid
+zplugin light zdharma/zsh-diff-so-fancy
+
+# needs to be run last ?
 zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
 zplugin light zdharma/fast-syntax-highlighting
 
