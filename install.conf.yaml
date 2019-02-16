@@ -6,14 +6,13 @@
 - clean: ['~']
 
 - link:
-    ~/.config/nvim/init.vim: init.vim
-    ~/.ctags: ctags
+    ~/.config/nvim/init.vim: nvimrc
     ~/.dircolors: dircolors
     ~/.fzf.zsh: fzf.zsh
     ~/.npmrc: npmrc
     ~/.tmux.conf: tmux.conf
+    ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
     ~/.tmuxline.conf: tmuxline.conf
-    ~/.vim/colors: vim-colors
     ~/.vimrc: vimrc
     ~/.zlogin: zlogin
     ~/.zsh: zsh
