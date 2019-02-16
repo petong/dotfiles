@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/nvim/init.vim: init.vim
+    ~/.ctags: ctags
+    ~/.dircolors: dircolors
+    ~/.fzf.zsh: fzf.zsh
+    ~/.npmrc: npmrc
+    ~/.tmux.conf: tmux.conf
+    ~/.tmuxline.conf: tmuxline.conf
+    ~/.vim/colors: vim-colors
+    ~/.vimrc: vimrc
+    ~/.zlogin: zlogin
+    ~/.zsh: zsh
+    ~/.zshrc: zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
