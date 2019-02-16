@@ -13,11 +13,6 @@ module_path+=( "/Users/jph/.zplugin/bin/zmodules/Src" )
 zmodload zdharma/zplugin
 
 
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # fzf env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -31,6 +26,9 @@ zplugin light zsh-users/zsh-completions
 zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
 zplugin light zsh-users/zsh-autosuggestions
 
+# nvm
+NVM_LAZY_LOAD=true
+zplugin light "lukechilds/zsh-nvm"
 
 #zplugin light zsh-users/zsh-syntax-highlighting
 zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
@@ -53,13 +51,9 @@ zplugin light zdharma/fast-syntax-highlighting
 if (( $+commands[nvim] )); then
   export EDITOR=nvim
   export VISUAL=nvim
-  alias vi=$EDITOR
-  alias vim=$EDITOR
 elif (( $+commands[vim] )); then
   export EDITOR=vim
   export VISUAL=vim
-  alias vi=$EDITOR
-  alias vim=$EDITOR
 fi
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
