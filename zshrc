@@ -21,12 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 # fzf env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin's installer chunk
-
+# zplugin customization goes here
 zplugin light zdharma/zui
 zplugin light zdharma/zplugin-crasis
 
