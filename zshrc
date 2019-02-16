@@ -23,12 +23,15 @@ zplugin light zdharma/zplugin-crasis
 zplugin ice wait"0" blockf lucid
 zplugin light zsh-users/zsh-completions
 
-zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+#zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
+#zplugin light zsh-users/zsh-autosuggestions
 
 # nvm
 NVM_LAZY_LOAD=true
 zplugin light "lukechilds/zsh-nvm"
+
+# npm
+zplugin light 'lukechilds/zsh-better-npm-completion'
 
 #zplugin light zsh-users/zsh-syntax-highlighting
 zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
@@ -40,12 +43,12 @@ zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 zplugin ice as"program" pick"bin/git-dsf" wait"0" lucid
 zplugin light zdharma/zsh-diff-so-fancy
 
-# needs to be run last ?
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
+# needs to be run before last plugin is loaded
+zplugin ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
 zplugin light zdharma/fast-syntax-highlighting
 
-# This one to be ran just once, in interactive session
-#zplugin creinstall %HOME/my_completions  # Handle completions without loading any plugin, see "clist" command
+## end zplugin
+#############
 
 # ZSH setup
 if (( $+commands[nvim] )); then
