@@ -63,8 +63,8 @@ HISTFILE=~/.zsh_history
 
 # custom shell configurations
 [ -e "$HOME/.zsh/aliases.zsh" ] && source "$HOME/.zsh/aliases.zsh"
-[ -e "$HOME/.zsh/functions.zsh" ] && source "$HOME/.zsh/functions.zsh"
 [ -e "$HOME/.zsh/appearance.zsh" ] && source "$HOME/.zsh/appearance.zsh"
 [ -e "$HOME/.zsh/completion.zsh" ] && source "$HOME/.zsh/completion.zsh"
+[ -e "$HOME/.zsh/functions.zsh" ] && source "$HOME/.zsh/functions.zsh"
 [ -e "$HOME/.zsh/keybindings.zsh" ] && source "$HOME/.zsh/keybindings.zsh"
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
