@@ -9,10 +9,8 @@
     ~/.config/nvim/init.vim: nvimrc
     ~/.dircolors: dircolors
     ~/.fzf.zsh: fzf.zsh
-    ~/.npmrc: npmrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
-    ~/.tmuxline.conf: tmuxline.conf
     ~/.vimrc: vimrc
     ~/.zlogin: zlogin
     ~/.zsh: zsh
