@@ -8,7 +8,6 @@
 - link:
     ~/.config/nvim/init.vim: nvimrc
     ~/.dircolors: dircolors
-    ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
