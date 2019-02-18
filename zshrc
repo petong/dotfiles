@@ -9,19 +9,12 @@ source "${ZPLGM[HOME_DIR]}/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-module_path+=( "/Users/jph/.zplugin/bin/zmodules/Src" )
-zmodload zdharma/zplugin
-
-
-# fzf env
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # zplugin customization goes here
 zplugin light zdharma/zui
 zplugin light zdharma/zplugin-crasis
 
-zplugin ice wait"0" blockf lucid
-zplugin light zsh-users/zsh-completions
+#zplugin ice wait"0" blockf lucid
+#zplugin light zsh-users/zsh-completions
 
 #zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
 #zplugin light zsh-users/zsh-autosuggestions
@@ -33,8 +26,10 @@ zplugin light "lukechilds/zsh-nvm"
 # npm
 zplugin light 'lukechilds/zsh-better-npm-completion'
 
-#zplugin light zsh-users/zsh-syntax-highlighting
+# fzf binary, completion, and zsh key bindings
 zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
+zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
+zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 
 # Load the pure theme, with zsh-async library that's bundled with it
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
@@ -42,6 +37,9 @@ zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 # diff-so-fancy
 zplugin ice as"program" pick"bin/git-dsf" wait"0" lucid
 zplugin light zdharma/zsh-diff-so-fancy
+
+# completions from prezto
+zplugin snippet PZT::modules/completion/init.zsh
 
 # needs to be run before last plugin is loaded
 zplugin ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
