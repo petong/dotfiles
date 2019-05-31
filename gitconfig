@@ -34,14 +34,14 @@
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     rb = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     wc = whatchanged --name-only --pretty="" origin..HEAD
-[mergetool "fugitive"]
-    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+#[mergetool "fugitive"]
+#    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
     default = tracking
 [grep]
     lineNumber = true
-[merge]
-    tool = fugitive
+#[merge]
+#    tool = fugitive
 [github]
 	user = petong
 [color "diff-highlight"]
@@ -49,3 +49,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[merge]
+tool = vim_mergetool
+conflictstyle = diff3
+
+[mergetool "vim_mergetool"]
+cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
+trustExitCode = true
