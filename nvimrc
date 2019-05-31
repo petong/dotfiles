@@ -107,9 +107,9 @@ set autoindent "Copy indent from current line when starting a new line
 set smartindent
 set smarttab "when we autoindent, backspace will delete the entire tab width, not just individual spaces
 
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 " Display tabs and trailing spaces visually
