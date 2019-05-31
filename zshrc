@@ -20,7 +20,7 @@ zplugin light zdharma/zplugin-crasis
 #zplugin light zsh-users/zsh-autosuggestions
 
 # nvm
-NVM_LAZY_LOAD=true
+NVM_LAZY_LOAD=false
 zplugin light "lukechilds/zsh-nvm"
 
 # npm
