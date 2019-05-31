@@ -69,3 +69,5 @@ HISTFILE=~/.zsh_history
 [ -e "$HOME/.zsh/functions.zsh" ] && source "$HOME/.zsh/functions.zsh"
 [ -e "$HOME/.zsh/keybindings.zsh" ] && source "$HOME/.zsh/keybindings.zsh"
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
