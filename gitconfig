@@ -37,7 +37,7 @@
 #[mergetool "fugitive"]
 #    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
-    default = tracking
+	default = current
 [grep]
     lineNumber = true
 #[merge]
