@@ -25,6 +25,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mtth/scratch.vim'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'samoshkin/vim-mergetool'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+"Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+"Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 "Plug 'junegunn/rainbow_parentheses.vim'
 
 " completion
@@ -267,5 +272,10 @@ endif
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+" ================= vim-mergetool ========================
+let g:mergetool_layout = 'mr'
+let g:mergetool_prefer_revision = 'local'
 
 
