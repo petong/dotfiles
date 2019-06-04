@@ -75,7 +75,8 @@ set ruler                      " Show the line and column number of the cursor p
 set showcmd                    " Show (partial) command in status line.
 set showmode                   " Show current mode down the bottom
 set visualbell                 " Use visual bell instead of beeping
-set mls=5                      " search first/last lines for modeline
+set nomodeline                 " Disables modeline
+"set mls=5                      " search first/last lines for modeline
 set showmatch                  " When a bracket is inserted, briefly jump to the matching one.
 set cursorline                 " Highlight the screen line of the cursor with CursorLine
 "set cursorcolumn               " vertical cursorline
