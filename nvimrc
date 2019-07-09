@@ -14,10 +14,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
-"Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gregsexton/gitv'
+"Plug 'rbong/vim-flog'
 Plug 'w0rp/ale'
 Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }
 Plug 'int3/vim-extradite'
@@ -197,7 +198,6 @@ autocmd BufWinLeave * call clearmatches()
 
 " =================== Custom Mappings ==============
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader><leader> :noh<cr>
 "nnoremap <tab> %
 "vnoremap <tab> %
 " toggle cursorcolumn
@@ -229,7 +229,7 @@ if exists(":CtrlP")
 endif
 
 " ==================== AirLine ====================
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 0
 let g:airline_theme='papercolor'
 
@@ -260,12 +260,18 @@ if filewritable(".") && ! filewritable("/.config/nvim/backup")
 endif
 
 
-" ================== ggrep ===========================
+" ================== rgrep ===========================
  if executable('rg')
   set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
   set grepformat=%f:%l:%c:%m
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
+  let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+  command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 endif
 
 " ================== ultisnips ===========================
@@ -279,4 +285,20 @@ endif
 let g:mergetool_layout = 'mr'
 let g:mergetool_prefer_revision = 'local'
 
+
+" ================= fzf ========================
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>g :GFiles<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>r :Rg<space>
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" ctrl-z causes fzf to hang, map it to nothing
+function! CtrlZWorkaround(lines)
+  return "	"
+endfunction
+let g:fzf_action = {
+  \ 'ctrl-z': function('CtrlZWorkaround') }
 
