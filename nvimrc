@@ -302,3 +302,6 @@ endfunction
 let g:fzf_action = {
   \ 'ctrl-z': function('CtrlZWorkaround') }
 
+
+" =================== yaml file settings ===============
+autocmd FileType yaml setl indentkeys-=<:>
