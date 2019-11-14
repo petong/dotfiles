@@ -301,7 +301,8 @@ function! CtrlZWorkaround(lines)
 endfunction
 let g:fzf_action = {
   \ 'ctrl-z': function('CtrlZWorkaround') }
-
+" allow escape to close fzf window, since we remap it for :term
+autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 
 " =================== yaml file settings ===============
 autocmd FileType yaml setl indentkeys-=<:>
