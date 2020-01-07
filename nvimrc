@@ -152,8 +152,8 @@ set sidescroll=1
 
 " =================== Set Variables ====================
 let g:terminal_scrollback_buffer_size = 2147483647  " set :terminal scrollback to maximum
-let g:python_host_prog = '/Users/jph/.pyenv/shims/python'
-let g:python3_host_prog = '/Users/jph/.pyenv/shims/python3'
+let g:python_host_prog = $HOME.'/.pyenv/shims/python'
+let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
 
 " =================== Navigation =======================
 
