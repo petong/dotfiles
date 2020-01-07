@@ -1,6 +1,6 @@
 [user]
-	name = Peter Hicks
-	email = petong@jah.net
+  useConfigOnly = true
+
 [color]
     diff = auto
     status = auto
