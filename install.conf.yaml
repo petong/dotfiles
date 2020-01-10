@@ -15,6 +15,7 @@
     ~/.zlogin: zlogin
     ~/.zsh: zsh
     ~/.zshrc: zshrc
+    ~/.zprofile: zprofile
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
