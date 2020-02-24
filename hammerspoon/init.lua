@@ -1,0 +1,45 @@
+hyper = {"cmd","alt","ctrl"}
+shift_hyper = {"cmd","alt","ctrl","shift"}
+hs.loadSpoon("SpoonInstall")
+spoon.SpoonInstall.use_syncinstall = true
+Install=spoon.SpoonInstall
+Install:andUse("WindowGrid",
+               {
+                 config = { gridGeometries = { { "5x4" } } },
+                 hotkeys = {show_grid = {hyper, "g"}},
+                 start = true
+               }
+)
+
+-- Get list of screens and refresh that list whenever screens are plugged or unplugged
+-- then reload hammerspoon so grid is correct
+local screens = hs.screen.allScreens()
+local screenwatcher = hs.screen.watcher.new(function()
+  screens = hs.screen.allScreens()
+  hs.reload()
+end)
+
+-- do stuff when screen is locked
+function caffeinateEvents(eventType)
+  local spotifyState = hs.spotify.getPlaybackState()
+  local playing = hs.spotify.isPlaying()
+  foo = hs.inspect(eventType)
+  -- hs.notify.new({title="Hammerspoon", informativeText=foo}):send()
+  -- change things when screen locks
+  -- note, screen saver will lock screen and in this case puase spotify
+  if (eventType == hs.caffeinate.watcher.screensDidLock) then
+    if playing then
+      hs.spotify.pause()
+    end
+  end
+end
+caffeinateWatcher = hs.caffeinate.watcher.new(caffeinateEvents)
+caffeinateWatcher:start()
+
+
+
+-- caffeine
+
+hs.loadSpoon("Caffeine")
+--spoon.Caffeine:bindHotkeys({toggle = {hyper, "C"},})
+spoon.Caffeine:start()

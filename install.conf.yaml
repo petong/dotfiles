@@ -9,13 +9,14 @@
     ~/.config/nvim/init.vim: nvimrc
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig
+    ~/.hammerspoon/init.lua: hammerspoon/init.lua
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
     ~/.vimrc: vimrc
     ~/.zlogin: zlogin
+    ~/.zprofile: zprofile
     ~/.zsh: zsh
     ~/.zshrc: zshrc
-    ~/.zprofile: zprofile
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
