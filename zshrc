@@ -1,51 +1,50 @@
 # set up zplugin
-local -A ZPLGM
-ZPLGM[HOME_DIR]="${ZDOTDIR:-$HOME}/.zplugin"
-if [[ ! -d "${ZPLGM[HOME_DIR]}" ]]; then
-  mkdir -p "${ZPLGM[HOME_DIR]}"
-  git clone https://github.com/zdharma/zplugin.git "${ZPLGM[HOME_DIR]}/bin"
+local -A ZINIT
+ZINIT[HOME_DIR]="${ZDOTDIR:-$HOME}/.zinit"
+if [[ ! -d "${ZINIT[HOME_DIR]}" ]]; then
+  mkdir -p "${ZINIT[HOME_DIR]}"
+  git clone https://github.com/zdharma/zinit.git "${ZINIT[HOME_DIR]}/bin"
 fi
-source "${ZPLGM[HOME_DIR]}/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# zplugin customization goes here
-zplugin light zdharma/zui
-zplugin light zdharma/zplugin-crasis
+# zinit customization goes here
+zinit light zdharma/zui
 
-#zplugin ice wait"0" blockf lucid
-#zplugin light zsh-users/zsh-completions
+#zinit ice wait"0" blockf lucid
+#zinit light zsh-users/zsh-completions
 
-#zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
-#zplugin light zsh-users/zsh-autosuggestions
+#zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
+#zinit light zsh-users/zsh-autosuggestions
 
 # nvm
 NVM_LAZY_LOAD=false
-zplugin light "lukechilds/zsh-nvm"
+zinit light "lukechilds/zsh-nvm"
 
 # npm
-zplugin light 'lukechilds/zsh-better-npm-completion'
+zinit light 'lukechilds/zsh-better-npm-completion'
 
 # fzf binary, completion, and zsh key bindings
-zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
-zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
-zplugin snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
+zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
+zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
+zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 
 # Load the pure theme, with zsh-async library that's bundled with it
-zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
 
 # diff-so-fancy
-zplugin ice as"program" pick"bin/git-dsf" wait"0" lucid
-zplugin light zdharma/zsh-diff-so-fancy
+zinit ice as"program" pick"bin/git-dsf" wait"0" lucid
+zinit light zdharma/zsh-diff-so-fancy
 
 # completions from prezto
-zplugin snippet PZT::modules/completion/init.zsh
+zinit snippet PZT::modules/completion/init.zsh
 
 # needs to be run before last plugin is loaded
-zplugin ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
-zplugin light zdharma/fast-syntax-highlighting
+zinit ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
+zinit light zdharma/fast-syntax-highlighting
 
-## end zplugin
+## end zinit
 #############
 
 # ZSH setup
