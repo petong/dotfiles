@@ -36,6 +36,7 @@ Plug 'samoshkin/vim-mergetool'
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 "Plug 'Shougo/neosnippet.vim'
 "Plug 'Shougo/neosnippet-snippets'
