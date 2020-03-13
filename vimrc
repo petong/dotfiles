@@ -28,8 +28,6 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
 endif
 
 " themes
