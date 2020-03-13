@@ -12,6 +12,15 @@ autoload -Uz _zinit
 # zinit customization goes here
 zinit light zdharma/zui
 
+# switch to power10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #zinit ice wait"0" blockf lucid
 #zinit light zsh-users/zsh-completions
 
@@ -31,7 +40,7 @@ zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zs
 zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 
 # Load the pure theme, with zsh-async library that's bundled with it
-zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
+#zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
 
 # diff-so-fancy
 zinit ice as"program" pick"bin/git-dsf" wait"0" lucid
@@ -72,3 +81,6 @@ HISTFILE=~/.zsh_history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.zsh.local ] && source ~/.zsh.local
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
