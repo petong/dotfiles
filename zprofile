@@ -1,5 +1,5 @@
 # any modifications to path go in this file
-path=( ${HOME}/bin /usr/local/bin /usr/local/sbin $path)
+path=( ${HOME}/bin ${HOME}/ripple/bin ${HOME}/go/bin /usr/local/bin /usr/local/sbin $path)
 cdpath=( $HOME/git )
 
 # pyenv
