@@ -3,8 +3,8 @@ path=( ${HOME}/bin ${HOME}/ripple/bin ${HOME}/go/bin /usr/local/bin /usr/local/s
 cdpath=( $HOME/git )
 
 # pyenv
-eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+#eval "$(pyenv init -)"
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # added by travis gem
 [ -f /Users/jph/.travis/travis.sh ] && source /Users/jph/.travis/travis.sh
