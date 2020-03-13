@@ -71,3 +71,5 @@ HISTFILE=~/.zsh_history
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.zsh.local ] && source ~/.zsh.local
