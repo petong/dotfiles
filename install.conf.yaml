@@ -10,6 +10,7 @@
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig
     ~/.hammerspoon/init.lua: hammerspoon/init.lua
+    ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
     ~/.vimrc: vimrc
@@ -17,7 +18,6 @@
     ~/.zprofile: zprofile
     ~/.zsh: zsh
     ~/.zshrc: zshrc
-    ~/.p10k.zsh: p10k.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
