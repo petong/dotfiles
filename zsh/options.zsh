@@ -14,5 +14,5 @@ READNULLCMD=less
 #   -X   keep content on screen after exit
 #   -M   show more info at the bottom prompt line
 #   -x4  tabs are 4 instead of 8
-export LESS=-iRXMx4
+export LESS=-iRFXMx4
 
