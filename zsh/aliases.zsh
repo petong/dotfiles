@@ -20,6 +20,7 @@ case $OSTYPE {
         alias ls='ls -G'
         alias qt='top -ocpu -O+rsize -s 5 -n 20'
         alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+        alias sleepnow='pmset displaysleepnow'
 # set colors for LS (man ls for color list)
         export LSCOLORS="gxfxcxdxbxegedabagacad"
     ;;
