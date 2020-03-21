@@ -43,7 +43,11 @@ zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 zinit light zinit-zsh/z-a-bin-gem-node
 
 # pyenv
-zinit pack for pyenv
+#zinit pack for pyenv
+zinit lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
+    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
+        pyenv/pyenv
 
 # Load the pure theme, with zsh-async library that's bundled with it
 #zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
