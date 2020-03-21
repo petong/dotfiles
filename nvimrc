@@ -12,26 +12,17 @@ call plug#begin('~/.config/nvim/plugged')
 "  UpdateRemotePlugi
 "endfunction
 
-"Plug 'scrooloose/syntastic'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'ctrlpvim/ctrlp.vim'
-Plug 'gregsexton/gitv'
-"Plug 'rbong/vim-flog'
-Plug 'w0rp/ale'
-Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }
-Plug 'int3/vim-extradite'
-Plug 'junegunn/vim-easy-align'
-Plug 'mtth/scratch.vim'
-Plug 'rking/ag.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'samoshkin/vim-mergetool'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-"Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-"Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-"Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-fugitive'                                       " A Git wrapper so awesome, it should be illegal
+Plug 'gregsexton/gitv'                                          " gitk for vim
+Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }                " provide a nice inteface for dealing with Git branches. needs fugitive
+Plug 'airblade/vim-gitgutter'                                   " shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
+Plug 'samoshkin/vim-mergetool'                                  " better mergetool
+Plug 'vim-airline/vim-airline'                                  " lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'                           " A collection of themes for vim-airline
+Plug 'dense-analysis/ale'                                       " async lint engine
+"Plug 'int3/vim-extradite'
+Plug 'junegunn/vim-easy-align'                                  " A Vim alignment plugin
+Plug 'mtth/scratch.vim'                                         " Unobtrusive scratch window
 
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
