@@ -47,6 +47,7 @@ Plug 'saltstack/salt-vim'
 Plug 'chr4/nginx.vim'
 "Plug 'https://github.com/xolox/vim-misc.git'
 "Plug 'xolox/vim-lua-ftplugin.git'
+Plug 'hashivim/vim-terraform'
 
 
 " themes
