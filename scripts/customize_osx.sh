@@ -1,5 +1,45 @@
 #!/bin/bash
 
+# exit if we arent running on OSX
+uname -a | grep -q Darwin || exit 0
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+
+## UI/UX
+
+# Menu bar
+defaults write com.apple.systemuiserver menuExtras -array \
+      "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+      "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+      "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+      "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+
+# clock settings
+defaults write com.apple.menuextra.clock IsAnalog -bool false
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm:ss"
+
+# Disable automatic capitalization
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+## touchbar
+# defaults to F keys
+defaults write apple.touchbar.agent PresentationModeGlobal functionKeys
 
 # mission control
 # disables auto rearrange based on most recent use
@@ -20,8 +60,30 @@ defaults write com.apple.dock autohide -bool true
 # Stop icons from bouncing in OS X Dock
 defaults write com.apple.dock no-bouncing -bool true
 
+# changes screenshot location
+defaults write com.apple.screencapture location -string "$HOME/Documents/ScreenShots"
+
 ## trackpad
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# swipe between pages - off
+defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
+
+# disable expose
+defaults write com.apple.dock showAppExposeGestureEnabled -bool false
+
+## Finder
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+
+
+## restart affected services
+pkill "Touch Bar agent";
+pkill "ControlStrip"
