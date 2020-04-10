@@ -21,3 +21,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [scripts/customize_osx.sh]
