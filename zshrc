@@ -28,7 +28,7 @@ fi
 #zinit light zsh-users/zsh-autosuggestions
 
 # nvm
-NVM_LAZY_LOAD=false
+NVM_LAZY_LOAD=true
 zinit light "lukechilds/zsh-nvm"
 
 # npm
