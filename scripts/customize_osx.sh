@@ -41,9 +41,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # defaults to F keys
 defaults write apple.touchbar.agent PresentationModeGlobal functionKeys
 
-# mission control
-# disables auto rearrange based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
 
 
 #running "Always show scrollbars"
@@ -57,8 +54,18 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# make the dock tiny
+defaults write com.apple.dock largesize -int 16
+
 # Stop icons from bouncing in OS X Dock
 defaults write com.apple.dock no-bouncing -bool true
+
+# mission control
+# disables auto rearrange based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# disable expose
+defaults write com.apple.dock showAppExposeGestureEnabled -bool false
 
 # changes screenshot location
 defaults write com.apple.screencapture location -string "$HOME/Documents/ScreenShots"
@@ -72,9 +79,6 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # swipe between pages - off
 defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
-
-# disable expose
-defaults write com.apple.dock showAppExposeGestureEnabled -bool false
 
 ## Finder
 
