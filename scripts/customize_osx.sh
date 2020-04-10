@@ -89,5 +89,10 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 
 ## restart affected services
-pkill "Touch Bar agent";
-pkill "ControlStrip"
+for app in \
+  "Touch Bar agent" \
+  "ControlStrip" \
+  "SystemUIServer" \
+  "cfprefsd"; do
+  pkill "${app}" &> /dev/null
+done
