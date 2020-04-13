@@ -81,11 +81,14 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
 
 ## Finder
-
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+
+## Iterm2
+defaults write com.googlecode.iterm2 HideScrollbar -bool true
+defaults write com.googlecode.iterm2 HideTabNumber -bool true
 
 
 ## restart affected services
