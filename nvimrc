@@ -145,8 +145,8 @@ set sidescroll=1
 
 " =================== Set Variables ====================
 let g:terminal_scrollback_buffer_size = 2147483647  " set :terminal scrollback to maximum
-let g:python_host_prog = $HOME.'/.pyenv/shims/python'
-let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
+"let g:python_host_prog = $HOME.'/.pyenv/shims/python'
+"let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
 
 " =================== Navigation =======================
 
@@ -155,14 +155,19 @@ let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
 " up and down will move lines
 "nnoremap <Down> :m+<CR>==
 "nnoremap <Up> :m-2<CR>==
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-nnoremap <left> :bp<cr>
-nnoremap <right> :bn<cr>
-inoremap <up> <nop>
-inoremap <down> <nop>
+"nnoremap <left> :bp<cr>
+"nnoremap <right> :bn<cr>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <Up> <nop>
+vnoremap <Up> <nop>
+vnoremap <Down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
+vnoremap <Up> <nop>
+inoremap <Down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
