@@ -7,3 +7,6 @@
 [submodule "tmux-yank"]
 	path = tmux/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "tmux/tmux-logging"]
+	path = tmux/tmux-logging
+	url = https://github.com/tmux-plugins/tmux-logging
