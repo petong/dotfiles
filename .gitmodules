@@ -2,8 +2,8 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "tmux-sensible"]
-	path = tmux-sensible
+	path = tmux/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
 [submodule "tmux-yank"]
-	path = tmux-yank
+	path = tmux/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
