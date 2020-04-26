@@ -1,12 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "tmux-sensible"]
-	path = tmux/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "tmux-yank"]
-	path = tmux/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "tmux/tmux-logging"]
-	path = tmux/tmux-logging
-	url = https://github.com/tmux-plugins/tmux-logging
+[submodule "tmux/tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm.git

@@ -6,15 +6,15 @@
     status = auto
     branch = auto
     interactive = auto
-	ui = true
+  ui = true
     pager = true
 [color "diff"]
-	whitespace = red reverse
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
+  whitespace = red reverse
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
 [core]
   #pager = diff-so-fancy | less --tabs=4 -RFX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -37,18 +37,18 @@
 #[mergetool "fugitive"]
 #    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
-	default = current
+  default = current
 [grep]
     lineNumber = true
 #[merge]
 #    tool = fugitive
 [github]
-	user = petong
+  user = petong
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [merge]
 tool = vim_mergetool
 conflictstyle = diff3
@@ -56,3 +56,5 @@ conflictstyle = diff3
 [mergetool "vim_mergetool"]
 cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
 trustExitCode = true
+[url "git@gitlab.ops.ripple.com:"]
+  insteadOf = https://gitlab.ops.ripple.com/

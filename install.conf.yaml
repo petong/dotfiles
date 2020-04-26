@@ -13,6 +13,7 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
+    ~/.tmux/plugins/tpm: tmux/tpm
     ~/.vimrc: vimrc
     ~/.zlogin: zlogin
     ~/.zprofile: zprofile
