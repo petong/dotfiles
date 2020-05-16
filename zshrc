@@ -6,6 +6,7 @@ if [[ ! -d "${ZINIT[HOME_DIR]}" ]]; then
   git clone https://github.com/zdharma/zinit.git "${ZINIT[HOME_DIR]}/bin"
 fi
 source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
+autoload -U compinit && compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -80,7 +81,7 @@ HISTSIZE=20480
 SAVEHIST=10240
 HISTFILE=~/.zsh_history
 
-# autocomplete for kubectl
+# completions for kubectl
 which kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 
 # custom shell configurations
@@ -97,3 +98,4 @@ which kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
