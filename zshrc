@@ -80,6 +80,9 @@ HISTSIZE=20480
 SAVEHIST=10240
 HISTFILE=~/.zsh_history
 
+# autocomplete for kubectl
+which kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+
 # custom shell configurations
 [ -e "$HOME/.zsh/aliases.zsh" ] && source "$HOME/.zsh/aliases.zsh"
 [ -e "$HOME/.zsh/appearance.zsh" ] && source "$HOME/.zsh/appearance.zsh"
