@@ -34,6 +34,7 @@
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     rb = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     wc = whatchanged --name-only --pretty="" origin..HEAD
+    pd = push -u origin HEAD
 #[mergetool "fugitive"]
 #    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
@@ -58,3 +59,5 @@ cmd = nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
 trustExitCode = true
 [url "git@gitlab.ops.ripple.com:"]
   insteadOf = https://gitlab.ops.ripple.com/
+[pull]
+  rebase = false
