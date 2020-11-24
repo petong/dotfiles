@@ -6,9 +6,9 @@ if [[ ! -d "${ZINIT[HOME_DIR]}" ]]; then
   git clone https://github.com/zdharma/zinit.git "${ZINIT[HOME_DIR]}/bin"
 fi
 source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
-autoload -U compinit && compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+
 
 # zinit customization goes here
 zinit light zdharma/zui
@@ -34,6 +34,9 @@ zinit light "lukechilds/zsh-nvm"
 
 # npm
 zinit light 'lukechilds/zsh-better-npm-completion'
+
+# kubectl
+zinit light 'nnao45/zsh-kubectl-completion'
 
 # fzf binary, completion, and zsh key bindings
 zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
@@ -81,8 +84,11 @@ HISTSIZE=20480
 SAVEHIST=10240
 HISTFILE=~/.zsh_history
 
-# completions for kubectl
-which kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+#autoload -Uz compinit
+#compinit
+#which kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+#zinit cdreplay -q # <- execute compdefs provided by rest of plugins
+
 
 # custom shell configurations
 [ -e "$HOME/.zsh/aliases.zsh" ] && source "$HOME/.zsh/aliases.zsh"

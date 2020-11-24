@@ -2,6 +2,7 @@
 # aliases
 alias g='git'
 alias h=history
+alias k='kubectl'
 alias vi=$EDITOR
 alias vim=$EDITOR
 alias yaml2js="python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
@@ -26,4 +27,7 @@ case $OSTYPE {
     ;;
 }
 
-
+# work specific aliases
+if [[ -x $(which rkubectl) ]];then
+  alias kubectl=rkubectl
+fi
