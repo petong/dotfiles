@@ -40,8 +40,8 @@ zinit light 'nnao45/zsh-kubectl-completion'
 
 # fzf binary, completion, and zsh key bindings
 zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
-zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
-zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
+zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
+zinit light junegunn/fzf
 
 # needed to pull packages
 zinit light zinit-zsh/z-a-bin-gem-node
