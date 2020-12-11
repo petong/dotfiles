@@ -5,7 +5,13 @@
 
 - clean: ['~']
 
+- create:
+    - ~/.cheat
+
 - link:
+    ~/.cheat/conf.yml: cheat.conf.yml
+    ~/.cheat/jph: ~/iCloudDrive/cheat/jph
+    ~/.cheat/cheatsheets: cheatsheets
     ~/.config/nvim/init.vim: nvimrc
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig

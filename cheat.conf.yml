@@ -44,7 +44,7 @@ cheatpaths:
   # Once downloaded, ensure that 'path' below points to the location at which
   # you downloaded the community cheatsheets.
   - name: community
-    path: ~/git/cheatsheets
+    path: ~/.cheat/cheatsheets
     tags: [ community ]
     readonly: true
 

@@ -4,3 +4,6 @@
 [submodule "tmux/tpm"]
 	path = tmux/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "cheatsheets"]
+	path = cheatsheets
+	url = https://github.com/cheat/cheatsheets.git
