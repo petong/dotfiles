@@ -1,9 +1,13 @@
-setopt autocd
 setopt histignorealldups
 setopt histignorespace
 setopt sharehistory
 setopt inc_append_history
 setopt no_flow_control
+
+# directory navigation
+setopt autocd
+setopt autopushd
+setopt pushdignoredups
 
 READNULLCMD=less
 # This affects every invocation of `less`.
