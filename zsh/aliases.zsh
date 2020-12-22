@@ -1,5 +1,6 @@
 
 # aliases
+alias d='dirs -v'
 alias g='git'
 alias h=history
 alias k='kubectl'
