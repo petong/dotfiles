@@ -17,6 +17,7 @@
     ~/.gitconfig: gitconfig
     ~/.hammerspoon/init.lua: hammerspoon/init.lua
     ~/.p10k.zsh: p10k.zsh
+    ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
     ~/.tmux/plugins/tpm: tmux/tpm
