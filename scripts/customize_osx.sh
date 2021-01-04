@@ -99,3 +99,41 @@ for app in \
   "cfprefsd"; do
   pkill "${app}" &> /dev/null
 done
+
+
+
+# install brew if needed
+which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+if [[ ! -L ~/iCloudDrive ]]; then
+    ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloudDrive
+fi
+
+if [[ ! -d /Applications/Hammerspoon.app ]]; then
+  brew cask install hammerspoon
+fi
+
+brew update
+brew install \
+ cheat \
+ flycut \
+ gpg \
+ helm \
+ k9s \
+ keybase \
+ kubectl \
+ mtr \
+ ngrep \
+ nvim \
+ pass \
+ ripgrep \
+ tig \
+ tmux \
+ util-linux \
+
+brew install --cask hammerspoon
+brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
+brew install --cask signal
+brew install --cask spotify
+
+brew tap ripple/homebrew-taps git@gitlab.ops.ripple.com:homebrew/taps.git
