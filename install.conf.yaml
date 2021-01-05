@@ -9,6 +9,7 @@
     - ~/.cheat
 
 - link:
+    ~/.alacritty.yml: alacritty.yml
     ~/.cheat/conf.yml: cheat.conf.yml
     ~/.cheat/jph: ~/iCloudDrive/cheat/jph
     ~/.cheat/cheatsheets: cheatsheets
