@@ -62,6 +62,7 @@ window:
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
   #decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -73,7 +74,8 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   #startup_mode: Windowed
-  startup_mode: Fullscreen
+  #startup_mode: Fullscreen
+  startup_mode: Maximized
 
   # Window title
   #title: Alacritty
@@ -266,8 +268,8 @@ colors:
 
   normal:
     black:   '#000000'
-    red:     '#c91b00'
-    green:   '#00c200'
+    red:     '#981b00'
+    green:   '#00a100'
     yellow:  '#c7c400'
     blue:    '#4762dd'
     magenta: '#684ed2'
@@ -287,7 +289,7 @@ colors:
   bright:
     black:   '#676767'
     red:     '#ff6d67'
-    green:   '#5ff967'
+    green:   '#00a100'
     yellow:  '#fefb67'
     blue:    '#7aa6da'
     magenta: '#6871ff'
