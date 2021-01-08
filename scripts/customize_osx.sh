@@ -109,9 +109,9 @@ if [[ ! -L ~/iCloudDrive ]]; then
     ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloudDrive
 fi
 
-if [[ ! -d /Applications/Hammerspoon.app ]]; then
-  brew cask install hammerspoon
-fi
+#if [[ ! -d /Applications/Hammerspoon.app ]]; then
+#  brew install --cask hammerspoon
+#fi
 
 brew update
 brew install \
@@ -119,6 +119,7 @@ brew install \
  flycut \
  gpg \
  helm \
+ htop \
  k9s \
  keybase \
  kubectl \
@@ -127,6 +128,7 @@ brew install \
  nvim \
  pass \
  ripgrep \
+ rust \
  tig \
  tmux \
  util-linux \
