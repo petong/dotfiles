@@ -6,9 +6,6 @@ cdpath=( $HOME/git )
 #eval "$(pyenv init -)"
 #if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# added by travis gem
-[ -f /Users/jph/.travis/travis.sh ] && source /Users/jph/.travis/travis.sh
-
 # set path accoring to os type
 case $OSTYPE {
     linux*)
