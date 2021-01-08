@@ -289,7 +289,7 @@ colors:
   bright:
     black:   '#676767'
     red:     '#ff6d67'
-    green:   '#00a100'
+    green:   '#00b100'
     yellow:  '#fefb67'
     blue:    '#7aa6da'
     magenta: '#6871ff'
@@ -431,6 +431,10 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - --login
 
 # Startup directory
 #
