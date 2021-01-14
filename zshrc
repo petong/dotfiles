@@ -70,7 +70,7 @@ zinit light zdharma/fast-syntax-highlighting
 ## end zinit
 #############
 
-# ZSH setup
+# editor setup
 if (( $+commands[nvim] )); then
   export EDITOR=nvim
   export VISUAL=nvim
@@ -98,7 +98,7 @@ HISTFILE=~/.zsh_history
 [ -e "$HOME/.zsh/keybindings.zsh" ] && source "$HOME/.zsh/keybindings.zsh"
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.zsh.local ] && source ~/.zsh.local
 
