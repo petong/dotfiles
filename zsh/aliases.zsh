@@ -29,6 +29,6 @@ case $OSTYPE {
 }
 
 # work specific aliases
-if [[ -x $(which rkubectl) ]];then
-  alias kubectl=rkubectl
-fi
+#if [[ -x $(which rkubectl) ]];then
+#  alias kubectl=rkubectl
+#fi
