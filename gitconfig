@@ -1,5 +1,7 @@
 [user]
   useConfigOnly = true
+	email = phicks@ripple.com
+	name = Peter Hicks
 
 [color]
     diff = auto
@@ -20,21 +22,21 @@
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
 [alias]
-    A = add -A
-    g = grep --break --heading --line-number
-    l = pull
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lr = pull --rebase
-    p = push
-    s = status
-    co = checkout
-    riom = rebase -i origin/master
-    undo = reset --soft "HEAD^"
-    wdiff = diff --color-words
+    A               = add -A
+    co              = checkout
+    g               = grep --break --heading --line-number
+    l               = pull
+    lg              = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lr              = pull --rebase
+    p               = push
+    pd              = push -u origin HEAD
+    rb              = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-    rb = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
-    wc = whatchanged --name-only --pretty="" origin..HEAD
-    pd = push -u origin HEAD
+    riom            = rebase -i origin/master
+    s               = status
+    undo            = reset --soft "HEAD^"
+    wc              = whatchanged --name-only --pretty="" origin..HEAD
+    wdiff           = diff --color-words
 #[mergetool "fugitive"]
 #    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [push]
