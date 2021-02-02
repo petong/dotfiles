@@ -213,19 +213,6 @@ if has("autocmd")
      augroup END
 endif
 
-" ==================== CtrlP   ====================
-" ctrlp
-if exists(":CtrlP")
-  let g:ctrlp_max_files = 0
-  let g:ctrlp_open_new_file = 'r'
-  let g:ctrlp_open_multiple_files = 'i'
-  let g:ctrlp_show_hidden = 1
-  let g:ctrlp_arg_map = 1
-  "let g:ctrlp_working_path_mode = '~/git'
-  let g:ctrlp_working_path_mode = 'ra'
-  "noremap <leader>b :CtrlPBuffer<CR>
-endif
-
 " ==================== AirLine ====================
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 0
