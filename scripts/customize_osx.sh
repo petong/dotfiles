@@ -133,6 +133,7 @@ brew install \
  tmux \
  util-linux \
 
+brew install --cask docker
 brew install --cask hammerspoon
 brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
 brew install --cask signal
