@@ -77,6 +77,9 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# disable disctionary lookup on force click
+defaults write -g com.apple.trackpad.forceClick -int 0
+
 # swipe between pages - off
 defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
 
@@ -116,6 +119,7 @@ fi
 brew update
 brew install \
  cheat \
+ emojify \
  flycut \
  gpg \
  helm \
