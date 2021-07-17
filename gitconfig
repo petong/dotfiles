@@ -28,6 +28,7 @@
     l               = pull
     lg              = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lr              = pull --rebase
+    lu              = ls-files  -o --exclude-standard
     p               = push
     pd              = push -u origin HEAD
     rb              = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
@@ -63,3 +64,5 @@ trustExitCode = true
   insteadOf = https://gitlab.ops.ripple.com/
 [pull]
   rebase = false
+[init]
+	defaultBranch = main
