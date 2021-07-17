@@ -79,6 +79,9 @@ elif (( $+commands[vim] )); then
   export VISUAL=vim
 fi
 
+# golang setup
+export GOPATH=$HOME/go
+
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=20480
 SAVEHIST=10240
