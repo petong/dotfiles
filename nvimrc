@@ -54,6 +54,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'https://github.com/tomasr/molokai.git'
 Plug 'fenetikm/falcon'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 "
@@ -181,7 +182,12 @@ set mouse=
 " ================= Colors ========================
 set background=dark
 colorscheme PaperColor
-"
+"colorscheme tokyonight
+
+
+" ================= TokyoNight settings ===========
+let g:tokyonight_style = "night"
+" =============================================================
 
 "improve autocomplete menu color
 " dont need this since we have nice colors from solarize
