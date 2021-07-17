@@ -126,6 +126,7 @@ brew install \
  htop \
  k9s \
  keybase \
+ krew \
  kubectl \
  mtr \
  ngrep \
