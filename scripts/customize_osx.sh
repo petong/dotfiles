@@ -93,6 +93,11 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.googlecode.iterm2 HideScrollbar -bool true
 defaults write com.googlecode.iterm2 HideTabNumber -bool true
 
+## messages
+# Set the keyboard shortcuts for next and previous messages
+defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go To Next Conversation" "@~\\U2192"
+defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go To Previous Conversation" "@~\\U2190"
+
 
 ## restart affected services
 for app in \
