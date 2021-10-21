@@ -23,11 +23,12 @@
     ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
     ~/.tmux/plugins/tpm: tmux/tpm
     ~/.vimrc: vimrc
+    ~/.config/yamllint/config: yamllint.config
     ~/.zlogin: zlogin
     ~/.zprofile: zprofile
     ~/.zsh: zsh
     ~/.zshrc: zshrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [scripts/customize_osx.sh]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [scripts/customize_osx.sh]
