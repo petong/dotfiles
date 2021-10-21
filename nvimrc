@@ -296,4 +296,11 @@ let g:fzf_action = {
 autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 
 " =================== yaml file settings ===============
-autocmd FileType yaml setl indentkeys-=<:>
+autocmd FileType yaml setl ts=2 sts=2 sw=2 expandtab indentkeys-=<:>
+
+
+" =================== ALE settings =====================
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
