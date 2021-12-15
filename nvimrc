@@ -176,6 +176,9 @@ nnoremap k gk
 " set some mappings for :term
 tnoremap <Esc> <C-\><C-n>
 
+" ================= change default behavior =======
+nmap Y Y
+
 " ================= mouse  ========================
 set mouse=
 
