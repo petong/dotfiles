@@ -3,7 +3,7 @@ local -A ZINIT
 ZINIT[HOME_DIR]="${ZDOTDIR:-$HOME}/.zinit"
 if [[ ! -d "${ZINIT[HOME_DIR]}" ]]; then
   mkdir -p "${ZINIT[HOME_DIR]}"
-  git clone https://github.com/zdharma/zinit.git "${ZINIT[HOME_DIR]}/bin"
+  git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT[HOME_DIR]}/bin"
 fi
 source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
 autoload -Uz _zinit
@@ -11,7 +11,9 @@ autoload -Uz _zinit
 
 
 # zinit customization goes here
-zinit light zdharma/zui
+zinit light zdharma-continuum/zui
+
+#zinit for annexes zsh-users+fast console-tools fuzzy
 
 # switch to power10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -44,7 +46,8 @@ zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
 
 # needed to pull packages
-zinit light zinit-zsh/z-a-bin-gem-node
+#zinit light zinit-zsh/z-a-bin-gem-node
+zinit light zinit-zsh/zinit-annex-bin-gem-node
 
 # pyenv
 #zinit pack for pyenv
@@ -58,14 +61,14 @@ zinit lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
 
 # diff-so-fancy
 zinit ice as"program" pick"bin/git-dsf" wait"0" lucid
-zinit light zdharma/zsh-diff-so-fancy
+zinit light zdharma-continuum/zsh-diff-so-fancy
 
 # completions from prezto
 zinit snippet PZT::modules/completion/init.zsh
 
 # needs to be run before last plugin is loaded
 zinit ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 ## end zinit
 #############
