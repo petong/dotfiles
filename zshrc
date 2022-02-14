@@ -47,7 +47,7 @@ zinit light junegunn/fzf
 
 # needed to pull packages
 #zinit light zinit-zsh/z-a-bin-gem-node
-zinit light zinit-zsh/zinit-annex-bin-gem-node
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
 # pyenv
 #zinit pack for pyenv
