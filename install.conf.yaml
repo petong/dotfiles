@@ -17,6 +17,7 @@
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig
     ~/.hammerspoon/init.lua: hammerspoon/init.lua
+    ~/.kube/kubie.yaml: kubie.yaml
     ~/.p10k.zsh: p10k.zsh
     ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
