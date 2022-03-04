@@ -95,8 +95,8 @@ defaults write com.googlecode.iterm2 HideTabNumber -bool true
 
 ## messages
 # Set the keyboard shortcuts for next and previous messages
-defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go To Next Conversation" "@~\\U2192"
-defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go To Previous Conversation" "@~\\U2190"
+defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Next Conversation" "@~\\U2192"
+defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Previous Conversation" "@~\\U2190"
 
 
 ## restart affected services
@@ -133,6 +133,7 @@ brew install \
  keybase \
  krew \
  kubectl \
+ kubie \
  mtr \
  ngrep \
  nvim \
