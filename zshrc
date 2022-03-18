@@ -39,6 +39,7 @@ zinit light 'lukechilds/zsh-better-npm-completion'
 
 # kubectl
 zinit light 'nnao45/zsh-kubectl-completion'
+zinit light 'johanhaleby/kubetail'
 
 # fzf binary, completion, and zsh key bindings
 zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
