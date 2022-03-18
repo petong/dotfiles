@@ -51,6 +51,9 @@ Plug 'chr4/nginx.vim'
 "Plug 'xolox/vim-lua-ftplugin.git'
 Plug 'hashivim/vim-terraform'
 
+" install sniprun. rust toolchain required
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+
 
 " themes
 Plug 'https://github.com/tomasr/molokai.git'
