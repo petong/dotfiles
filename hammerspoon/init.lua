@@ -61,17 +61,17 @@ Install:andUse("KSheet", {
 })
 
 -- ArrangeDesktop
-Install:andUse('ArrangeDesktop')
-arptoprangeDesktop = hs.loadSpoon('ArrangeDesktop')
-arrangeDesktop.logger.setLogLevel('info')
-menubar = hs.menubar.new()
+-- Install:andUse('ArrangeDesktop')
+-- arptoprangeDesktop = hs.loadSpoon('ArrangeDesktop')
+-- arrangeDesktop.logger.setLogLevel('info')
+-- menubar = hs.menubar.new()
 
-if menubar then
-    menubar:setIcon(hs.image.imageFromName("NSHandCursor"))
-    local menuItems = {}
-    menuItems = arrangeDesktop:addMenuItems(menuItems)
-    menubar:setMenu(menuItems)
-end
+-- if menubar then
+--     menubar:setIcon(hs.image.imageFromName("NSHandCursor"))
+--     local menuItems = {}
+--     menuItems = arrangeDesktop:addMenuItems(menuItems)
+--     menubar:setMenu(menuItems)
+-- end
 -- arrangeDesktop = hs.loadSpoon('ArrangeDesktop')
 -- arrangeDesktop.logger.setLogLevel('info')
 -- menubar = hs.menubar.new()
