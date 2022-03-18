@@ -14,9 +14,10 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-fugitive'                                       " A Git wrapper so awesome, it should be illegal
 Plug 'gregsexton/gitv'                                          " gitk for vim
-Plug 'idanarye/vim-merginal', { 'tag': '2.0.2' }                " provide a nice inteface for dealing with Git branches. needs fugitive
+Plug 'idanarye/vim-merginal', { 'tag': '2.2.1' }                " provide a nice inteface for dealing with Git branches. needs fugitive
 Plug 'airblade/vim-gitgutter'                                   " shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'samoshkin/vim-mergetool'                                  " better mergetool
+
 Plug 'vim-airline/vim-airline'                                  " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'                           " A collection of themes for vim-airline
 Plug 'dense-analysis/ale'                                       " async lint engine
