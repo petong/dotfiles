@@ -27,8 +27,8 @@ fi
 #zinit ice wait"0" blockf lucid
 #zinit light zsh-users/zsh-completions
 
-#zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
-#zinit light zsh-users/zsh-autosuggestions
+zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions
 
 # nvm
 NVM_LAZY_LOAD=true
