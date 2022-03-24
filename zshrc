@@ -107,6 +107,8 @@ HISTFILE=~/.zsh_history
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# kubie configs
+[ -f ~/.zsh/kc.zsh ] && source ~/.zsh/kc.zsh
 [ -f ~/.zsh.local ] && source ~/.zsh.local
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
