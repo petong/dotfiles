@@ -54,6 +54,9 @@ Plug 'hashivim/vim-terraform'
 " install sniprun. rust toolchain required
 " Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 
+" markdown support
+Plug 'ellisonleao/glow.nvim'
+
 " tree file explorer
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
