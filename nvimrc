@@ -226,7 +226,8 @@ if has("autocmd")
     " Source the nvimrc file after saving it. This way, you don't have to reload Vim to see the changes.
      augroup mynvimrchooks
       au!
-      autocmd bufwritepost .config/nvimrc source %
+      autocmd bufwritepost .config/nvim/init.vim source %
+      autocmd bufwritepost nvimrc source %
      augroup END
 endif
 
