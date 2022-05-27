@@ -43,7 +43,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " syntax
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'saltstack/salt-vim'
 "Plug 'https://github.com/chr4/nginx.vim'
 Plug 'chr4/nginx.vim'
