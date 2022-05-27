@@ -26,9 +26,6 @@ foreach file (`echo $sources`)
     fi
 end
 
-# pyenv
-#eval "$(pyenv init -)"
-#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # set path accoring to os type
 #case $OSTYPE {
