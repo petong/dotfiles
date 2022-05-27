@@ -1,6 +1,7 @@
 typeset -ga sources
 # any modifications to path go in this file
 path=(
+  ${HOME}/.local/bin
   ${HOME}/bin
   ${HOME}/ripple/bin
   /usr/local/bin
