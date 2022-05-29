@@ -10,6 +10,10 @@ osascript -e 'tell application "System Preferences" to quit'
 
 ## UI/UX
 
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
 # Menu bar
 defaults write com.apple.systemuiserver menuExtras -array \
       "/System/Library/CoreServices/Menu Extras/Clock.menu" \
@@ -47,9 +51,6 @@ defaults write apple.touchbar.agent PresentationModeGlobal functionKeys
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-# disables smart quotes
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
 ## Dock
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -59,6 +60,17 @@ defaults write com.apple.dock largesize -int 16
 
 # Stop icons from bouncing in OS X Dock
 defaults write com.apple.dock no-bouncing -bool true
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
 
 # mission control
 # disables auto rearrange based on most recent use
@@ -77,6 +89,16 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Enable HiDPI display modes (requires restart)
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
 # disable disctionary lookup on force click
 defaults write -g com.apple.trackpad.forceClick -int 0
 
@@ -87,6 +109,28 @@ defaults write -g AppleEnableSwipeNavigateWithScrolls -bool false
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 
 ## Iterm2
@@ -101,53 +145,13 @@ defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Previou
 
 ## restart affected services
 for app in \
-  "Touch Bar agent" \
   "ControlStrip" \
+  "Dock" \
+  "Finder" \
   "SystemUIServer" \
-  "cfprefsd"; do
+  "Touch Bar agent" \
+  "cfprefsd" \
+  ; do
   pkill "${app}" &> /dev/null
 done
 
-
-
-# install brew if needed
-which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-if [[ ! -L ~/iCloudDrive ]]; then
-    ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloudDrive
-fi
-
-#if [[ ! -d /Applications/Hammerspoon.app ]]; then
-#  brew install --cask hammerspoon
-#fi
-
-brew update
-brew install \
- cheat \
- emojify \
- flycut \
- gpg \
- helm \
- htop \
- k9s \
- keybase \
- krew \
- kubectl \
- kubie \
- mtr \
- ngrep \
- nvim \
- pass \
- ripgrep \
- rust \
- tig \
- tmux \
- util-linux \
-
-brew install --cask docker
-brew install --cask hammerspoon
-brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
-brew install --cask signal
-brew install --cask spotify
-
-brew tap ripple/homebrew-taps git@gitlab.ops.ripple.com:homebrew/taps.git
