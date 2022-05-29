@@ -7,33 +7,57 @@
 
 - create:
     - ~/.config/cheat
+      ~/.config/nvim
       ~/.hammerspoon
 
 - link:
-    ~/.alacritty.yml: alacritty.yml
-    ~/.config/cheat/conf.yml: cheat.conf.yml
-    ~/.config/cheat/jph: ~/iCloudDrive/cheat/jph
-    ~/.config/cheat/cheatsheets: cheatsheets
-    ~/.config/nvim/init.vim: nvimrc
-    ~/.dircolors: dircolors
-    ~/.gitconfig: gitconfig
-    ~/.hammerspoon/init.lua: hammerspoon/init.lua
+    ~/.alacritty.yml:
+      if: '[ `uname` = Darwin ]'
+      path: alacritty.yml
+    ~/.config/cheat/conf.yml:
+      if: '[ `uname` = Darwin ]'
+      path: cheat.conf.yml
+    ~/iCloudDrive:
+      path: ~/Library/Mobile Documents/com~apple~CloudDocs
+    ~/.config/cheat/jph:
+      if: '[ `uname` = Darwin ]'
+      path: ~/iCloudDrive/cheat/jph
+    ~/.config/cheat/cheatsheets:
+      path: cheatsheets
+    ~/.config/nvim/init.vim:
+      path: nvimrc
+    ~/.dircolors:
+      path: dircolors
+    ~/.gitconfig:
+      path: gitconfig
     ~/.hammerspoon/:
       if: '[ `uname` = Darwin ]'
       path: hammerspoon/**
       glob: true
-    ~/.kube/kubie.yaml: kubie.yaml
-    ~/.p10k.zsh: p10k.zsh
-    ~/.ssh/config: ssh_config
-    ~/.tmux.conf: tmux.conf
-    ~/.tmux/jph.tmuxcolors: jph.tmuxcolors
-    ~/.tmux/plugins/tpm: tmux/tpm
-    ~/.vimrc: vimrc
-    ~/.config/yamllint/config: yamllint.config
-    ~/.zlogin: zlogin
-    ~/.zprofile: zprofile
-    ~/.zsh: zsh
-    ~/.zshrc: zshrc
+    ~/.kube/kubie.yaml:
+      path: kubie.yaml
+    ~/.p10k.zsh:
+      path: p10k.zsh
+    ~/.ssh/config:
+      path: ssh_config
+    ~/.tmux.conf:
+      path: tmux.conf
+    ~/.tmux/jph.tmuxcolors:
+      path: jph.tmuxcolors
+    ~/.tmux/plugins/tpm:
+      path: tmux/tpm
+    ~/.vimrc:
+      path: vimrc
+    ~/.config/yamllint/config:
+      path: yamllint.config
+    ~/.zlogin:
+      path: zlogin
+    ~/.zprofile:
+      path: zprofile
+    ~/.zsh:
+      path: zsh
+    ~/.zshrc:
+      path: zshrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
