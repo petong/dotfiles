@@ -87,8 +87,9 @@ fi
 export GOPATH=$HOME/go
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=20480
-SAVEHIST=10240
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 
 #autoload -Uz compinit

@@ -1,3 +1,4 @@
+# history
 setopt histignorealldups
 setopt histignorespace
 setopt sharehistory
