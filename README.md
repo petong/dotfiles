@@ -54,3 +54,17 @@ https://github.com/tmux-plugins/tmux-sessionist
 |prefix + shift + j |resize 5 cells in the down direction|
 |prefix + shift + k |resize 5 cells in the up direction|
 |prefix + shift + l |resize 5 cells to the right|
+
+### Brew
+
+Create a Brewfile
+
+```
+brew bundle dump
+```
+
+Install packages from your Brewfile
+
+```
+brew bundle
+```
