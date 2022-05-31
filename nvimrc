@@ -12,6 +12,9 @@ call plug#begin('~/.config/nvim/plugged')
 "  UpdateRemotePlugi
 "endfunction
 
+" install me
+" https://github.com/SidOfc/carbon.nvim
+
 Plug 'tpope/vim-fugitive'                                       " A Git wrapper so awesome, it should be illegal
 Plug 'gregsexton/gitv'                                          " gitk for vim
 Plug 'idanarye/vim-merginal', { 'tag': '2.2.1' }                " provide a nice inteface for dealing with Git branches. needs fugitive
@@ -61,11 +64,17 @@ Plug 'ellisonleao/glow.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
+" carbon as an alternative to nvim-tree
+"Plug 'SidOfc/carbon.nvim'
+
 " themes
 Plug 'https://github.com/tomasr/molokai.git'
 Plug 'fenetikm/falcon'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'folke/tokyonight.nvim'
+
+" terminal
+Plug 'vimlab/split-term.vim'
 
 call plug#end()
 "
@@ -319,6 +328,13 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
+
+
+" ================== terminal settings =================
+" does not work yet
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+
 " ================== nvim tree =========================
 lua << EOF
 require('nvim-tree').setup{}
@@ -336,3 +352,12 @@ let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 }
 let g:nvim_tree_disable_netrw = 1
 let g:nvim_tree_= 1
 nnoremap <C-n> :NvimTreeToggle<CR>
+
+
+" =============== carbon ===============================
+" alternative to nvim-tree
+" lua << EOF
+"   require('carbon').setup({
+"     setting = 'value',
+"   })
+" EOF
