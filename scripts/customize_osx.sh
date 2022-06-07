@@ -132,6 +132,11 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+# disable hot corners
+defaults write com.apple.dock wvous-tl-corner -int 0      # top left
+defaults write com.apple.dock wvous-tr-corner -int 0      # top right
+defaults write com.apple.dock wvous-bl-corner -int 0      # bottom right
+defaults write com.apple.dock wvous-br-corner -int 0      # bottom right
 
 ## Iterm2
 defaults write com.googlecode.iterm2 HideScrollbar -bool true
