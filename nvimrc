@@ -24,7 +24,6 @@ Plug 'samoshkin/vim-mergetool'                                  " better mergeto
 Plug 'vim-airline/vim-airline'                                  " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'                           " A collection of themes for vim-airline
 Plug 'dense-analysis/ale'                                       " async lint engine
-"Plug 'int3/vim-extradite'
 Plug 'junegunn/vim-easy-align'                                  " A Vim alignment plugin
 Plug 'mtth/scratch.vim'                                         " Unobtrusive scratch window
 
@@ -41,17 +40,19 @@ Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 "Plug 'honza/vim-snippets'
 "
 "Plug 'ervandew/supertab'
+
+" language support
 Plug 'fatih/vim-go'
+
+" fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " syntax
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'saltstack/salt-vim'
 "Plug 'https://github.com/chr4/nginx.vim'
 Plug 'chr4/nginx.vim'
-"Plug 'https://github.com/xolox/vim-misc.git'
-"Plug 'xolox/vim-lua-ftplugin.git'
 Plug 'hashivim/vim-terraform'
 
 " install sniprun. rust toolchain required
@@ -64,8 +65,6 @@ Plug 'ellisonleao/glow.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
-" carbon as an alternative to nvim-tree
-"Plug 'SidOfc/carbon.nvim'
 
 " themes
 Plug 'https://github.com/tomasr/molokai.git'
@@ -354,10 +353,29 @@ let g:nvim_tree_= 1
 nnoremap <C-n> :NvimTreeToggle<CR>
 
 
-" =============== carbon ===============================
-" alternative to nvim-tree
-" lua << EOF
-"   require('carbon').setup({
-"     setting = 'value',
-"   })
-" EOF
+" ================ treesitter syntax ===================
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  -- ensure_installed = "all",
+  ensure_installed = {
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "python",
+    "rust",
+    "yaml"
+  },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+  },
+}
+require("nvim-treesitter.install").prefer_git = true
+EOF
