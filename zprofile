@@ -2,6 +2,7 @@ typeset -ga sources
 # any modifications to path go in this file
 path=(
   ${HOME}/.local/bin
+  ${HOME}/.zinit/polaris/bin
   ${HOME}/bin
   ${HOME}/ripple/bin
   /usr/local/bin
@@ -35,3 +36,4 @@ end
 #      PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 #    ;;
 #}
+eval "$(/opt/homebrew/bin/brew shellenv)"

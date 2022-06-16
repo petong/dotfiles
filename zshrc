@@ -42,9 +42,10 @@ zinit light 'nnao45/zsh-kubectl-completion'
 zinit light 'johanhaleby/kubetail'
 
 # fzf binary, completion, and zsh key bindings
-zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
-zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
-zinit light junegunn/fzf
+#zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
+#zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
+#zinit light junegunn/fzf
+zinit pack for fzf
 
 # needed to pull packages
 #zinit light zinit-zsh/z-a-bin-gem-node
@@ -52,10 +53,11 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
 # pyenv
 #zinit pack for pyenv
-zinit lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
-    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
-        pyenv/pyenv
+#zinit lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
+#    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+#    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
+#        pyenv/pyenv
+zinit pack for pyenv
 
 # Load the pure theme, with zsh-async library that's bundled with it
 #zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
@@ -107,6 +109,7 @@ HISTFILE=~/.zsh_history
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.zinit/plugins/fzf/shell/key-bindings.zsh ] && source ~/.zinit/plugins/fzf/shell/key-bindings.zsh
 
 # kubie configs
 [ -f ~/.zsh/kc.zsh ] && source ~/.zsh/kc.zsh
