@@ -1,6 +1,7 @@
 typeset -ga sources
 # any modifications to path go in this file
 path=(
+  ${HOME}/.rd/bin
   ${HOME}/.local/bin
   ${HOME}/.zinit/polaris/bin
   ${HOME}/bin
