@@ -39,7 +39,8 @@
     ~/.p10k.zsh:
       path: p10k.zsh
     ~/.ssh/config:
-      path: ssh_config
+      if: '[ `uname` = Darwin ]'
+      path: ~/iCloudDrive/ssh/config
     ~/.tmux.conf:
       path: tmux.conf
     ~/.tmux/jph.tmuxcolors:
