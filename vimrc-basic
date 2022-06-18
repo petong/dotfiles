@@ -14,6 +14,16 @@ set hidden       "allow hidden buffers
 set nu           "show numbers
 set wrap         "wrap lines
 set linebreak    "Wrap lines at convenient points
+set expandtab    "convert tabs to spaces
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+set number
+
+" Visualize tabs and newlines
+set list listchars=tab:»·,trail:·,nbsp:·
+set list
 
 " movement within a single line in linewrap
 nnoremap j gj
