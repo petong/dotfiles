@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# this needs to be done on a brand new mac
+# xcode-select --install
 
 # exit if we arent running on OSX
 uname -a | grep -q Darwin || exit 0
@@ -43,8 +46,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 ## touchbar
 # defaults to F keys
-defaults write apple.touchbar.agent PresentationModeGlobal functionKeys
-
+#defaults write apple.touchbar.agent PresentationModeGlobal functionKeys
+defaults write -g com.apple.keyboard.fnState 1
 
 
 #running "Always show scrollbars"
@@ -60,6 +63,9 @@ defaults write com.apple.dock largesize -int 16
 
 # Stop icons from bouncing in OS X Dock
 defaults write com.apple.dock no-bouncing -bool true
+
+# lock the size
+defaults write com.apple.dock size-immutable -bool yes
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
@@ -147,6 +153,18 @@ defaults write com.googlecode.iterm2 HideTabNumber -bool true
 defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Next Conversation" "@~\\U2192"
 defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Previous Conversation" "@~\\U2190"
 
+# flycut
+# load on startup
+defaults write com.generalarcade.flycut loadOnStartup 1
+# sync settings via icloud
+defaults write com.generalarcade.flycut syncSettingsViaICloud 1
+# black scissors icon
+defaults write com.generalarcade.flycut menuIcon 3
+
+
+# disable menu bar user switcher
+defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" 0
+
 
 ## restart affected services
 for app in \
@@ -160,3 +178,13 @@ for app in \
   pkill "${app}" &> /dev/null
 done
 
+
+### third party configs
+
+# install brew if not found
+which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew bundle
+
+# tmux plugins
+[[ -f ~/.tmux/plugins/tpm/bin/install_plugins ]] && ~/.tmux/plugins/tpm/bin/install_plugins
