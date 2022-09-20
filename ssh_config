@@ -1,1 +1,5 @@
 ServerAliveInterval 120
+
+Host ripplehosting
+  HostName *.ripplehosting.com
+  User phicks
