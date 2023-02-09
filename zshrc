@@ -70,6 +70,7 @@ zinit light zdharma-continuum/zsh-diff-so-fancy
 zinit snippet PZT::modules/completion/init.zsh
 
 # oh-my-zsh kubectl aliases
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 # needs to be run before last plugin is loaded
