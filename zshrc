@@ -69,6 +69,9 @@ zinit light zdharma-continuum/zsh-diff-so-fancy
 # completions from prezto
 zinit snippet PZT::modules/completion/init.zsh
 
+# oh-my-zsh kubectl aliases
+zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
+
 # needs to be run before last plugin is loaded
 zinit ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
 zinit light zdharma-continuum/fast-syntax-highlighting
