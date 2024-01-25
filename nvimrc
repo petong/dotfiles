@@ -234,6 +234,7 @@ nnoremap <leader>\| :set cursorcolumn!<cr>
 
 " append timestamp at end of line
 nnoremap <F5> :call setline(".", getline(".") . strftime(" %c"))<CR>
+nnoremap <leader>k :call RunLineInShell()
 
 " =================== AutoCmd ======================
 if has("autocmd")
@@ -383,3 +384,15 @@ require'nvim-treesitter.configs'.setup {
 }
 require("nvim-treesitter.install").prefer_git = true
 EOF
+
+
+" ================ functions ===========================
+nnoremap <leader>k :call RunLineInShell()<cr>
+function! RunLineInShell()
+  "call append(line('.'), '----------------')
+  exec 'r'.'!'.getline('.')
+  call append(line('.')-1, '----------------')
+  call append(line('.'), '----------------')
+endfunction
+
+
