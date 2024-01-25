@@ -57,7 +57,11 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 #    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
 #    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
 #        pyenv/pyenv
-zinit pack for pyenv
+#zinit pack for pyenv
+zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+zinit light pyenv/pyenv
 
 # Load the pure theme, with zsh-async library that's bundled with it
 #zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
