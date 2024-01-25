@@ -16,8 +16,8 @@ call plug#begin('~/.config/nvim/plugged')
 " https://github.com/SidOfc/carbon.nvim
 
 Plug 'tpope/vim-fugitive'                                       " A Git wrapper so awesome, it should be illegal
-Plug 'gregsexton/gitv'                                          " gitk for vim
-Plug 'idanarye/vim-merginal', { 'tag': '2.2.1' }                " provide a nice inteface for dealing with Git branches. needs fugitive
+"Plug 'gregsexton/gitv'                                          " gitk for vim
+Plug 'idanarye/vim-merginal', { 'tag': '2.2.3' }                " provide a nice inteface for dealing with Git branches. needs fugitive
 Plug 'airblade/vim-gitgutter'                                   " shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'samoshkin/vim-mergetool'                                  " better mergetool
 
