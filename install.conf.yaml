@@ -12,9 +12,9 @@
       ~/Documents/ScreenShots
 
 - link:
-    ~/.alacritty.yml:
+    ~/.alacritty.toml:
       if: '[ `uname` = Darwin ]'
-      path: alacritty.yml
+      path: alacritty.toml
     ~/.config/cheat/conf.yml:
       if: '[ `uname` = Darwin ]'
       path: cheat.conf.yml
