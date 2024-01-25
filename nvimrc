@@ -70,7 +70,10 @@ Plug 'kyazdani42/nvim-tree.lua'
 "Plug 'https://github.com/tomasr/molokai.git'
 "Plug 'fenetikm/falcon'
 Plug 'NLKNguyen/papercolor-theme'
-"Plug 'folke/tokyonight.nvim'
+Plug 'folke/tokyonight.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'ray-x/aurora'
+
 
 " terminal
 Plug 'vimlab/split-term.vim'
