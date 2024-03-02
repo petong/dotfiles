@@ -151,6 +151,7 @@ defaults write com.apple.MobileSMS NSUserKeyEquivalents -dict-add "Go to Previou
 ## restart affected services
 for app in \
   "ControlStrip" \
+  "ControlCenter" \
   "Dock" \
   "Finder" \
   "SystemUIServer" \

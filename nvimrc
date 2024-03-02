@@ -32,6 +32,13 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
+"snippets
+" follow latest release and install jsregexp.
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+
+" Mason, to manage LSPs
+Plug 'williamboman/mason.nvim'
+
 "Plug 'Shougo/neosnippet.vim'
 "Plug 'Shougo/neosnippet-snippets'
 
@@ -170,6 +177,7 @@ set sidescroll=1
 let g:terminal_scrollback_buffer_size = 2147483647  " set :terminal scrollback to maximum
 "let g:python_host_prog = $HOME.'/.pyenv/shims/python'
 "let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
+let g:python3_host_prog = $HOME.'/.zinit/plugins/pyenv---pyenv/shims/python3'
 
 " =================== Navigation =======================
 
@@ -383,6 +391,32 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 require("nvim-treesitter.install").prefer_git = true
+EOF
+
+
+" ================ luasnip ===========================
+
+
+
+
+" https://neovimcraft.com/plugin/L3MON4D3/LuaSnip/index.html
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+
+" ================ Mason ===========================
+lua << EOF
+require("mason").setup()
 EOF
 
 
