@@ -16,8 +16,8 @@ call plug#begin('~/.config/nvim/plugged')
 " https://github.com/SidOfc/carbon.nvim
 
 Plug 'tpope/vim-fugitive'                                       " A Git wrapper so awesome, it should be illegal
-Plug 'gregsexton/gitv'                                          " gitk for vim
-Plug 'idanarye/vim-merginal', { 'tag': '2.2.1' }                " provide a nice inteface for dealing with Git branches. needs fugitive
+"Plug 'gregsexton/gitv'                                          " gitk for vim
+Plug 'idanarye/vim-merginal', { 'tag': '2.2.3' }                " provide a nice inteface for dealing with Git branches. needs fugitive
 Plug 'airblade/vim-gitgutter'                                   " shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
 Plug 'samoshkin/vim-mergetool'                                  " better mergetool
 
@@ -31,6 +31,13 @@ Plug 'mtth/scratch.vim'                                         " Unobtrusive sc
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
+"snippets
+" follow latest release and install jsregexp.
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+
+" Mason, to manage LSPs
+Plug 'williamboman/mason.nvim'
 
 "Plug 'Shougo/neosnippet.vim'
 "Plug 'Shougo/neosnippet-snippets'
@@ -67,10 +74,13 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 
 " themes
-Plug 'https://github.com/tomasr/molokai.git'
-Plug 'fenetikm/falcon'
+"Plug 'https://github.com/tomasr/molokai.git'
+"Plug 'fenetikm/falcon'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'folke/tokyonight.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'ray-x/aurora'
+
 
 " terminal
 Plug 'vimlab/split-term.vim'
@@ -167,6 +177,7 @@ set sidescroll=1
 let g:terminal_scrollback_buffer_size = 2147483647  " set :terminal scrollback to maximum
 "let g:python_host_prog = $HOME.'/.pyenv/shims/python'
 "let g:python3_host_prog = $HOME.'/.pyenv/shims/python3'
+let g:python3_host_prog = $HOME.'/.zinit/plugins/pyenv---pyenv/shims/python3'
 
 " =================== Navigation =======================
 
@@ -231,6 +242,7 @@ nnoremap <leader>\| :set cursorcolumn!<cr>
 
 " append timestamp at end of line
 nnoremap <F5> :call setline(".", getline(".") . strftime(" %c"))<CR>
+nnoremap <leader>k :call RunLineInShell()
 
 " =================== AutoCmd ======================
 if has("autocmd")
@@ -360,6 +372,7 @@ require'nvim-treesitter.configs'.setup {
   -- ensure_installed = "all",
   ensure_installed = {
     "c",
+    "go",
     "javascript",
     "json",
     "lua",
@@ -379,3 +392,41 @@ require'nvim-treesitter.configs'.setup {
 }
 require("nvim-treesitter.install").prefer_git = true
 EOF
+
+
+" ================ luasnip ===========================
+
+
+
+
+" https://neovimcraft.com/plugin/L3MON4D3/LuaSnip/index.html
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+
+" ================ Mason ===========================
+lua << EOF
+require("mason").setup()
+EOF
+
+
+" ================ functions ===========================
+nnoremap <leader>k :call RunLineInShell()<cr>
+function! RunLineInShell()
+  "call append(line('.'), '----------------')
+  exec 'r'.'!'.getline('.')
+  call append(line('.')-1, '----------------')
+  call append(line('.'), '----------------')
+endfunction
+
+

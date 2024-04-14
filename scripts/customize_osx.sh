@@ -169,6 +169,7 @@ defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" 0
 ## restart affected services
 for app in \
   "ControlStrip" \
+  "ControlCenter" \
   "Dock" \
   "Finder" \
   "SystemUIServer" \
