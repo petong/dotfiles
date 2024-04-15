@@ -418,7 +418,7 @@ duration = 0
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-save_to_clipboard = false
+save_to_clipboard = true
 
 
 # CURSOR
