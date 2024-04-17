@@ -27,7 +27,7 @@
       path: cheatsheets
     ~/.config/tmux/tmux.conf:
       path: tmux/tmux.conf
-     ~/.config/tmux/tpm:
+    ~/.config/tmux/tpm:
       relink: true
       path: tmux/tpm
     ~/.dircolors:
