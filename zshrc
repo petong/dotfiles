@@ -57,7 +57,11 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 #    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
 #    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
 #        pyenv/pyenv
-zinit pack for pyenv
+#zinit pack for pyenv
+zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+zinit light pyenv/pyenv
 
 # Load the pure theme, with zsh-async library that's bundled with it
 #zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
@@ -68,6 +72,10 @@ zinit light zdharma-continuum/zsh-diff-so-fancy
 
 # completions from prezto
 zinit snippet PZT::modules/completion/init.zsh
+
+# oh-my-zsh kubectl aliases
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
+zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 # needs to be run before last plugin is loaded
 zinit ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
@@ -121,3 +129,50 @@ HISTFILE=~/.zsh_history
 # pyenv
 eval "$(pyenv init --path)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+eval "$(direnv hook zsh)"
+
+########## 1password #######################
+#
+#eval "$(op completion zsh)"; compdef _op op
+#eval "$(op completion zsh)"
+#
+#############################################
+
+####################################[ vault: vault addr prompt ]####################################
+# Create a Powerlevel10k prompt segment that shows that value of $VAULT_ADDR if set.
+function prompt_vault_addr() {
+  if [[ -n $VAULT_ADDR ]]; then
+    p10k segment -i '🔐' -f yellow -b blue -t "${${VAULT_ADDR#https:\/\/}%:*}"
+  fi
+}
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( vault_addr $POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS )
+
+#function prompt_vault_addr() {
+#  if [[ -n $VAULT_ADDR ]]; then
+#    p10k segment -i '🔐' -f yellow -b blue -t "${${VAULT_ADDR#https:\/\/}%:8200}"
+#  fi
+#}
+
+# Add it to the right prompt.
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=vault_addr
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS+=vault_addr
+
+# Only show it when running 'vault'.
+typeset -g POWERLEVEL9K_VAULT_ADDR_SHOW_ON_COMMAND='vault'
+
+typeset -g POWERLEVEL9K_VAULT_ADDR_CLASSES=(
+    '*prod*'     PROD       # These values are examples that are unlikely
+    '*staging*'  STAGING    # to match your needs. Customize them as needed.
+    '*'          OTHER)
+
+typeset -g POWERLEVEL9K_VAULT_ADDR_OTHER_FOREGROUND=55
+typeset -g POWERLEVEL9K_VAULT_ADDR_STAGING_FOREGROUND=72
+typeset -g POWERLEVEL9K_VAULT_ADDR_PROD_FOREGROUND=160
+typeset -g POWERLEVEL9K_VAULT_ADDR_OTHER_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

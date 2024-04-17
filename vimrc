@@ -32,6 +32,7 @@ endif
 
 " themes
 Plug 'https://github.com/tomasr/molokai.git'
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 "

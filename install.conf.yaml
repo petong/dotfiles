@@ -7,13 +7,14 @@
 
 - create:
     - ~/.config/cheat
-      ~/.config/nvim
+      ~/.config/tmux
       ~/.hammerspoon
+      ~/Documents/ScreenShots
 
 - link:
-    ~/.alacritty.yml:
+    ~/.alacritty.toml:
       if: '[ `uname` = Darwin ]'
-      path: alacritty.yml
+      path: alacritty.toml
     ~/.config/cheat/conf.yml:
       if: '[ `uname` = Darwin ]'
       path: cheat.conf.yml
@@ -24,8 +25,11 @@
       path: ~/iCloudDrive/cheat/jph
     ~/.config/cheat/cheatsheets:
       path: cheatsheets
-    ~/.config/nvim/init.vim:
-      path: nvimrc
+    ~/.config/tmux/tmux.conf:
+      path: tmux/tmux.conf
+     ~/.config/tmux/tpm:
+      relink: true
+      path: tmux/tpm
     ~/.dircolors:
       path: dircolors
     ~/.gitconfig:
@@ -39,13 +43,8 @@
     ~/.p10k.zsh:
       path: p10k.zsh
     ~/.ssh/config:
-      path: ssh_config
-    ~/.tmux.conf:
-      path: tmux.conf
-    ~/.tmux/jph.tmuxcolors:
-      path: jph.tmuxcolors
-    ~/.tmux/plugins/tpm:
-      path: tmux/tpm
+      if: '[ `uname` = Darwin ]'
+      path: ~/iCloudDrive/ssh/config
     ~/.vimrc:
       path: vimrc
     ~/.config/yamllint/config:
@@ -61,4 +60,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [scripts/customize_osx.sh]
+      #- [scripts/customize_osx.sh]

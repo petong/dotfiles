@@ -6,7 +6,8 @@ alias h=history
 alias k='kubectl'
 alias vi=$EDITOR
 alias vim=$EDITOR
-alias yaml2js="python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
+alias yaml2js="python3 -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
+alias json2yaml="python3 -c 'import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)'"
 
 # OS specific aliases
 case $OSTYPE {
