@@ -233,7 +233,7 @@ multiplier = 3
 
 [font]
 normal = { family = "Inconsolata Nerd Font", style = "Regular" }
-size = 12
+size = 13
 builtin_box_drawing = true
 
 # COLORS
@@ -549,16 +549,16 @@ hide_when_typing = false
 
 # Default:
 
-# [[hints.enabled]]
+[[hints.enabled]]
 # command = "xdg-open" # On Linux/BSD
-# # command = "open" # On macOS
-# # command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
-# hyperlinks = true
-# post_processing = true
-# persist = false
-# mouse.enabled = true
-# binding = { key = "U", mods = "Control|Shift" }
-# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+command = "open" # On macOS
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
 
 #[hints]
 
