@@ -168,7 +168,7 @@ args = ["-l"]
 # opacity = 0.9
 
 [window]
-startup_mode = "Windowed"
+startup_mode = "SimpleFullscreen"
 title = "Alacritty"
 dynamic_title = true
 decorations_theme_variant = "None"
