@@ -233,7 +233,7 @@ multiplier = 3
 
 [font]
 normal = { family = "Inconsolata Nerd Font", style = "Regular" }
-size = 12
+size = 13
 builtin_box_drawing = true
 
 # COLORS
@@ -418,7 +418,7 @@ duration = 0
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-save_to_clipboard = false
+save_to_clipboard = true
 
 
 # CURSOR
