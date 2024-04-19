@@ -45,7 +45,7 @@ zinit light 'johanhaleby/kubetail'
 #zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
 #zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 #zinit light junegunn/fzf
-zinit pack for fzf
+#zinit pack for fzf
 
 # needed to pull packages
 #zinit light zinit-zsh/z-a-bin-gem-node
@@ -117,7 +117,8 @@ HISTFILE=~/.zsh_history
 [ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.zinit/plugins/fzf/shell/key-bindings.zsh ] && source ~/.zinit/plugins/fzf/shell/key-bindings.zsh
+#[ -f ~/.zinit/plugins/fzf/shell/key-bindings.zsh ] && source ~/.zinit/plugins/fzf/shell/key-bindings.zsh
+eval "$(fzf --zsh)"
 
 # kubie configs
 [ -f ~/.zsh/kc.zsh ] && source ~/.zsh/kc.zsh
@@ -138,6 +139,10 @@ eval "$(direnv hook zsh)"
 #eval "$(op completion zsh)"
 #
 #############################################
+
+########### thefuck
+#
+eval $(thefuck --alias)
 
 ####################################[ vault: vault addr prompt ]####################################
 # Create a Powerlevel10k prompt segment that shows that value of $VAULT_ADDR if set.
