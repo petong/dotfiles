@@ -63,8 +63,13 @@ trustExitCode = true
 [url "git@gitlab.ops.ripple.com:"]
   insteadOf = https://gitlab.ops.ripple.com/
 [pull]
-  rebase = false
+  rebase = true
 [init]
 	defaultBranch = main
 [branch]
 	autoSetupMerge = simple
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
