@@ -6,8 +6,11 @@
 source ${ZDOTDIR}/.antidote/antidote.zsh
 antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
 
+#om-my-posh
+if (( $+commands[oh-my-posh] )); then
+  eval "$(oh-my-posh init zsh)"
 # Initialize Starship prompt
-if [ -x "$(command -v starship)" ]; then
+elif (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
