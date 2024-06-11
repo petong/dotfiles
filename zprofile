@@ -1,3 +1,13 @@
+export ZDOTDIR=$HOME
+# golang setup
+export GOPATH=$HOME/go
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
+
 typeset -ga sources
 # any modifications to path go in this file
 path=(

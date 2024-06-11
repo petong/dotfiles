@@ -1,88 +1,25 @@
-# set up zplugin
-local -A ZINIT
-ZINIT[HOME_DIR]="${ZDOTDIR:-$HOME}/.zinit"
-if [[ ! -d "${ZINIT[HOME_DIR]}" ]]; then
-  mkdir -p "${ZINIT[HOME_DIR]}"
-  git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT[HOME_DIR]}/bin"
-fi
-source "${ZINIT[HOME_DIR]}/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+# Clone antidote if necessary.
+[[ -d ${ZDOTDIR}/.zsh/antidote ]] ||
+  git clone https://github.com/mattmc3/antidote ${ZDOTDIR}/.zsh/antidote
+
+# Create an amazing Zsh config using antidote plugins.
+source ${ZDOTDIR}/.zsh/antidote/antidote.zsh
+antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
 
 
-# zinit customization goes here
-zinit light zdharma-continuum/zui
+# Load pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
-#zinit for annexes zsh-users+fast console-tools fuzzy
+# Initialize Starship prompt
+eval "$(starship init zsh)"
 
-# switch to power10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Custom configurations
+# Add your custom Zsh configurations here
 
-#zinit ice wait"0" blockf lucid
-#zinit light zsh-users/zsh-completions
-
-zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
-zinit light zsh-users/zsh-autosuggestions
-
-# nvm
-NVM_LAZY_LOAD=true
-zinit light "lukechilds/zsh-nvm"
-
-# npm
-zinit light 'lukechilds/zsh-better-npm-completion'
-
-# kubectl
-zinit light 'nnao45/zsh-kubectl-completion'
-zinit light 'johanhaleby/kubetail'
-
-# fzf binary, completion, and zsh key bindings
-#zinit ice from"gh-r" as"program"; zinit load junegunn/fzf-bin
-#zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
-#zinit light junegunn/fzf
-#zinit pack for fzf
-
-# needed to pull packages
-#zinit light zinit-zsh/z-a-bin-gem-node
-zinit light zdharma-continuum/zinit-annex-bin-gem-node
-
-# pyenv
-#zinit pack for pyenv
-#zinit lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
-#    atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-#    atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
-#        pyenv/pyenv
-#zinit pack for pyenv
-zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
-    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
-zinit light pyenv/pyenv
-
-# Load the pure theme, with zsh-async library that's bundled with it
-#zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
-
-# diff-so-fancy
-zinit ice as"program" pick"bin/git-dsf" wait"0" lucid
-zinit light zdharma-continuum/zsh-diff-so-fancy
-
-# completions from prezto
-zinit snippet PZT::modules/completion/init.zsh
-
-# oh-my-zsh kubectl aliases
-# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
-zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
-
-# needs to be run before last plugin is loaded
-zinit ice atinit"autoload compinit; mkdir -p $HOME/.cache/zsh; compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION; zpcdreplay" wait"1" silent
-zinit light zdharma-continuum/fast-syntax-highlighting
-
-## end zinit
-#############
 
 # editor setup
 if (( $+commands[nvim] )); then
@@ -93,13 +30,6 @@ elif (( $+commands[vim] )); then
   export VISUAL=vim
 fi
 
-# golang setup
-export GOPATH=$HOME/go
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-export SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 
 #autoload -Uz compinit
