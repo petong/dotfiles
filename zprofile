@@ -1,11 +1,30 @@
-export ZDOTDIR=$HOME
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export ZDOTDIR="${ZDOTDIR:-$HOME}"
+
 # golang setup
 export GOPATH=$HOME/go
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
+export HISTFILE=~/.zsh_history
 export SAVEHIST=1000000000
+
+
+
+# Custom configurations
+# Add your custom Zsh configurations here
+
+
+# editor setup
+if (( $+commands[nvim] )); then
+  export EDITOR=nvim
+  export VISUAL=nvim
+elif (( $+commands[vim] )); then
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
 
 
 typeset -ga sources
