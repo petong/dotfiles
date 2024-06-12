@@ -1,3 +1,14 @@
+# Create an amazing Zsh config using antidote plugins.
+source ${ZDOTDIR}/.antidote/antidote.zsh
+antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
+
+#om-my-posh
+if (( $+commands[oh-my-posh] )); then
+  eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/pure.omp.json)"
+# Initialize Starship prompt
+elif (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+=======
 # Clone antidote if necessary.
 [[ -d ${ZDOTDIR}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR}/.antidote
@@ -9,9 +20,7 @@ antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
 #om-my-posh
 if (( $+commands[oh-my-posh] )); then
   eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/pure.omp.json)"
-# Initialize Starship prompt
-elif (( $+commands[starship] )); then
-  eval "$(starship init zsh)"
+  # eval "$(oh-my-posh init zsh )"
 fi
 
 # pyenv
@@ -25,11 +34,18 @@ if (( $+commands[pyenv-virtualenv-init] )); then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-eval "$(direnv hook zsh)"
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+#
+# fzf
+if (( $+commands[fzf] )); then
+  eval "$(fzf --zsh)"
+fi
 
-eval "$(fzf --zsh)"
-
-eval $(thefuck --alias)
+if (( $+commands[thefuck] )); then
+  eval $(thefuck --alias)
+fi
 
 #autoload -Uz compinit
 #compinit
