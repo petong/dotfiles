@@ -51,6 +51,4 @@ fi
 [ -f ~/.zsh.local ] && source ~/.zsh.local
 
 
-
-zstyle ':completion:*' menu select
 fpath+=~/.zfunc
