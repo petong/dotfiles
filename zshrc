@@ -5,7 +5,9 @@ antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
 
 #om-my-posh
 if (( $+commands[oh-my-posh] )); then
-  eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/pure.omp.json)"
+  # eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/pure.omp.json)"
+  # eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/tokyonight_storm.omp.json)"
+  eval "$(oh-my-posh init zsh --config ~/git/dotfiles/jph.omp.yaml)"
 # Initialize Starship prompt
 elif (( $+commands[starship] )); then
   eval "$(starship init zsh)"
@@ -39,6 +41,12 @@ fi
 if (( $+commands[zoxide] )); then
   eval "$(zoxide init zsh --cmd cd)"
 fi
+
+# atuin
+if (( $+commands[atuin] )); then
+  eval "$(atuin init zsh)"
+fi
+
 
 #
 # # custom shell configurations

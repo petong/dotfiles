@@ -174,11 +174,12 @@ title = "Alacritty"
 dynamic_title = true
 decorations_theme_variant = "None"
 decorations = "Full"
+# decorations = "Transparent"
 opacity = 1
 blur = false
 option_as_alt = "Both"
 dynamic_padding = true
-padding = { x = 5, y = 5 }
+padding = { x = 10, y = 30 }
 
 
 # SCROLLING
