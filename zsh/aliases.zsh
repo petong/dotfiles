@@ -29,12 +29,9 @@ case $OSTYPE {
     ;;
 }
 
-# work specific aliases
-#if [[ -x $(which rkubectl) ]];then
-#  alias kubectl=rkubectl
-#fi
-#
-
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 # kubectl
-alias kcn='kubectl config set-context --current --namespace'
+if (( $+commands[rkubectl] )); then
+  # Your alias or function definition here
+  alias kcn='kubectl config set-context --current --namespace'
+fi
