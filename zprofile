@@ -1,3 +1,34 @@
+export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export ZDOTDIR="${ZDOTDIR:-$HOME}"
+export GPG_TTY=$(tty)
+
+# golang setup
+export GOPATH=$HOME/go
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export HISTFILE=~/.zsh_history
+export SAVEHIST=1000000000
+
+
+
+# Custom configurations
+# Add your custom Zsh configurations here
+
+
+# editor setup
+if (( $+commands[nvim] )); then
+  export EDITOR=nvim
+  export VISUAL=nvim
+elif (( $+commands[vim] )); then
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
+
+
 typeset -ga sources
 # any modifications to path go in this file
 path=(

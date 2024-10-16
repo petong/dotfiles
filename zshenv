@@ -1,3 +1,4 @@
+export ZDOTDIR=$HOME/
 # any modifications to path go in this file
 #path=( ${HOME}/bin /usr/local/bin /usr/local/sbin $path)
 #cdpath=( $HOME/git )

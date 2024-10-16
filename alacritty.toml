@@ -176,6 +176,8 @@ decorations = "None"
 opacity = 1
 blur = false
 option_as_alt = "Both"
+# dynamic_padding = true
+# padding = { x = 10, y = 30 }
 
 
 # SCROLLING
@@ -232,9 +234,18 @@ multiplier = 3
 # Default: true
 
 [font]
-normal = { family = "Inconsolata Nerd Font", style = "Regular" }
-size = 13
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# bold   = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic   = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+# bold_italic   = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12
 builtin_box_drawing = true
+# normal = { family = "Inconsolata Nerd Font", style = "Regular" }
+normal = { family = "BlexMono Nerd Font Mono", style = "Regular" }
+# normal = { family = "Hack Nerd Font", style = "Regular" }
+# bold = { family = "Hack Nerd Font", style = "Bold" }
+# italic = { family = "Hack Nerd Font", style = "Italic" }
+# bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
 
 # COLORS
 # This section documents the [colors] table of the configuration file.
