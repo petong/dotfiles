@@ -140,6 +140,10 @@ eval "$(direnv hook zsh)"
 #
 #############################################
 
+########### thefuck
+#
+eval $(thefuck --alias)
+
 ####################################[ vault: vault addr prompt ]####################################
 # Create a Powerlevel10k prompt segment that shows that value of $VAULT_ADDR if set.
 function prompt_vault_addr() {
