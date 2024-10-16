@@ -34,15 +34,3 @@ if (( $+commands[lsd] )); then
     alias ls='lsd'
     alias tree='lsd --tree'
 fi
-
-# Set up rkubectl alias if available
-if (( $+commands[rkubectl] )); then
-    alias k='rkubectl'
-    alias kcn='kubectl config set-context --current --namespace'
-    # Add any other rkubectl related aliases here
-fi
-
-# if (( $+commands[exa] )); then
-#     alias ls='exa'
-#     alias tree='exa --tree'
-# fi
