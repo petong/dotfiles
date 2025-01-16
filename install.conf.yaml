@@ -59,7 +59,10 @@
       path: zshrc
     ~/.config/kitty/kitty.conf:
       if: '[ `uname` = Darwin ]'
-      path: ~/.config/kitty/kitty.conf
+      path: kitty.conf
+    ~/.config/ghostty/config:
+      if: '[ `uname` = Darwin ]'
+      path: ghostty.config
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
