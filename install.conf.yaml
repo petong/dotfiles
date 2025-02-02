@@ -38,13 +38,8 @@
       if: '[ `uname` = Darwin ]'
       path: hammerspoon/**
       glob: true
-    ~/.kube/kubie.yaml:
-      path: kubie.yaml
     ~/.p10k.zsh:
       path: p10k.zsh
-    ~/.ssh/config:
-      if: '[ `uname` = Darwin ]'
-      path: ~/iCloudDrive/ssh/config
     ~/.vimrc:
       path: vimrc
     ~/.config/yamllint/config:
@@ -57,9 +52,6 @@
       path: zsh
     ~/.zshrc:
       path: zshrc
-    ~/.config/kitty/kitty.conf:
-      if: '[ `uname` = Darwin ]'
-      path: ~/.config/kitty/kitty.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
