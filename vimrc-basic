@@ -1,33 +1,67 @@
-" https://raw.githubusercontent.com/petong/dotfiles/master/vimrc-basic
+" ==================== Plugin Management ====================
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" Sensible defaults
 Plug 'tpope/vim-sensible'
+
+" Basic UI improvements
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
-" other sensible settings
-set hidden       "allow hidden buffers
-set nu           "show numbers
-set wrap         "wrap lines
-set linebreak    "Wrap lines at convenient points
-set expandtab    "convert tabs to spaces
-set shiftwidth=2
+" ==================== General Settings ====================
+set nocompatible
+set encoding=utf-8
+set hidden            " Allow background buffers
+set number            " Show line numbers
+set relativenumber    " Relative line numbers
+set wrap              " Enable line wrapping
+set linebreak         " Wrap at word boundaries
+set cursorline        " Highlight cursor line
+set scrolloff=8       " Keep cursor centered
+set sidescrolloff=8
+
+" Indentation
+set expandtab         " Convert tabs to spaces
+set shiftwidth=2      " Indent size
 set softtabstop=2
-set expandtab
-set noshiftround
-set number
+set tabstop=2
+set smartindent       " Auto-indent new lines
 
-" Visualize tabs and newlines
-set list listchars=tab:»·,trail:·,nbsp:·
+" Visualize tabs and spaces
 set list
+set listchars=tab:»·,trail:·,nbsp:·
 
-" movement within a single line in linewrap
+" Search settings
+set ignorecase        " Case-insensitive search
+set smartcase         " Case-sensitive if mixed case
+set hlsearch          " Highlight search results
+set incsearch         " Incremental search
+
+" Better movement with wrapped lines
 nnoremap j gj
 nnoremap k gk
 
-" new default for mouse set in upstream is LAME
+" Mouse settings (disable by default)
 set mouse=
+
+" ==================== Airline Config ====================
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" ==================== Custom Key Mappings ====================
+let mapleader=" "
+
+" Toggle line numbers
+nnoremap <leader>n :set number! relativenumber!<CR>
+
+" Clear search highlight
+nnoremap <leader><space> :noh<CR>
+
