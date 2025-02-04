@@ -54,7 +54,7 @@ foreach file (`echo $sources`)
 end
 
 
-# set path accoring to os type
+# set path according to os type
 #case $OSTYPE {
 #    linux*)
 #    ;;
@@ -62,4 +62,6 @@ end
 #      PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 #    ;;
 #}
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if (( $+commands[brew] )); then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
