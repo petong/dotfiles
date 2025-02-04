@@ -63,14 +63,19 @@ fi
 
 
 #
-# # custom shell configurations
-[ -e "$HOME/.zsh/aliases.zsh" ] && source "$HOME/.zsh/aliases.zsh"
-[ -e "$HOME/.zsh/appearance.zsh" ] && source "$HOME/.zsh/appearance.zsh"
-[ -e "$HOME/.zsh/completion.zsh" ] && source "$HOME/.zsh/completion.zsh"
-[ -e "$HOME/.zsh/functions.zsh" ] && source "$HOME/.zsh/functions.zsh"
-[ -e "$HOME/.zsh/keybindings.zsh" ] && source "$HOME/.zsh/keybindings.zsh"
-[ -e "$HOME/.zsh/options.zsh" ] && source "$HOME/.zsh/options.zsh"
-[ -f ~/.zsh.local ] && source ~/.zsh.local
+# -----------------------------------------------------------------------------
+# Custom Shell Configurations
+# -----------------------------------------------------------------------------
+# Source additional configuration files if they exist.
+for file in "$HOME/.zsh/aliases.zsh" \
+            "$HOME/.zsh/appearance.zsh" \
+            "$HOME/.zsh/completion.zsh" \
+            "$HOME/.zsh/functions.zsh" \
+            "$HOME/.zsh/keybindings.zsh" \
+            "$HOME/.zsh/options.zsh" \
+            "$HOME/.zsh.local"; do
+  [ -e "$file" ] && source "$file"
+done
 
 
 fpath+=~/.zfunc
