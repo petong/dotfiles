@@ -1,7 +1,21 @@
-# Create an amazing Zsh config using antidote plugins.
-source ${ZDOTDIR}/.antidote/antidote.zsh
-antidote load ${ZDOTDIR}/.zsh/zsh_plugins.txt
+# Use $ZDOTDIR if defined, fallback to $HOME
+ZDOTDIR=${ZDOTDIR:-$HOME}
 
+# -----------------------------------------------------------------------------
+# 1. Ensure Antidote is installed.
+# -----------------------------------------------------------------------------
+ANTIDOTE_DIR="$ZDOTDIR/.antidote"
+ANTIDOTE_FILE="$ANTIDOTE_DIR/antidote.zsh"
+
+if [ ! -f "$ANTIDOTE_FILE" ]; then
+  echo "Antidote not found. Installing Antidote..."
+  # Clone the Antidote repo (you can adjust depth or use the installer script if you like)
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "$ANTIDOTE_DIR"
+  fi
+
+# Load Antidote and your plugins list.
+source "$ANTIDOTE_FILE"
+antidote load "$ZDOTDIR/.zsh/zsh_plugins.txt"
 
 #om-my-posh
 if (( $+commands[oh-my-posh] )); then
@@ -61,6 +75,3 @@ fi
 
 fpath+=~/.zfunc
 
-
-## zoxide
-eval "$(zoxide init --cmd cd zsh)"
