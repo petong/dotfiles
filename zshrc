@@ -26,7 +26,7 @@ if (( $+commands[oh-my-posh] )); then
 elif (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
- 
+
 # pyenv
 # Load pyenv
 if (( $+commands[pyenv] )); then
@@ -44,7 +44,7 @@ fi
 #
 # fzf
 if (( $+commands[fzf] )); then
-  eval "$(fzf --zsh)"
+    source <(fzf --zsh)
 fi
 
 if (( $+commands[thefuck] )); then
